@@ -1,0 +1,10 @@
+/*extra componets treeview*/
+/*-----------------------*/
+@import 'variables.scss';
+.treeview-wrapper{
+  .jstree-default{
+    border: 1px solid color("grey","lighten-2");
+    border-radius: 4px;
+    padding: 1rem;
+  }
+}  

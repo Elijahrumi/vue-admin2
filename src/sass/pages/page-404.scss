@@ -1,0 +1,57 @@
+/*----------------------------------------
+    404 Page
+------------------------------------------*/
+
+@import 'variables.scss';
+
+
+.section.section-404{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $white;
+    height: 100vh;
+    overflow: hidden;
+    
+.error-code{
+	font-size: 10rem !important;
+}
+}
+
+@media screen and (min-width: 992px){
+    .section.section-404{
+        .error-code{
+            font-size: 5rem !important;
+        }
+
+        .bg-image-404{
+            width: 70% !important;
+        }
+    }
+}
+@media screen and (min-width: 769px){
+        
+        .bg-image-404{
+            width: 100% !important;
+        }
+    }
+
+@media screen and (max-width: 768px){
+    .section.section-404{
+        .error-code{
+            font-size: 5rem !important;
+        }
+        
+        .bg-image-404{
+            width: 100%;
+        }
+    }
+}
+@media screen and (max-width: 540px){
+    .section.section-404{
+        .error-code{
+            font-size: 2rem !important;
+        }
+        
+    }
+}

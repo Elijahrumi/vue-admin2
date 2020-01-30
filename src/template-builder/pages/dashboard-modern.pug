@@ -1,0 +1,64 @@
+//- =========================================================================================
+	File Name: dashboard-modern.pug
+	Description: Sales Dashboard
+	----------------------------------------------------------------------------------------
+	Item Name: Materialize - Material Design Admin Template
+	Version: 5.0
+	Author: PixInvent
+	Author URL: https://pixinvent.com/
+	========================================================================================== 
+
+extends template
+
+block pageVars
+	- var pageTitle   = "Dashboard Modern"
+	- var activeMenu  = "dashboard-modern"
+	- var activeParentMenu = "dashboard"
+
+append templateConfig
+	//- - var dataColor = "bg-chartbg"
+
+append header
+	- var contentBreadcrumbs = false
+	- var contentHeader = true
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"}, {url:"#",name:"eCommerce"}, {name:"eCommerce Invoice"}])
+
+//- Include page content in page block
+append content
+	include ../contents/dashboard-modern.html
+	include ../contents/sidebar/right-sidebar.html
+	include ../contents/intro.html
+
+//- Vendor CSS
+//------------------------------
+//- Add Vendor specific CSS
+append vendorcss
+	link(rel="stylesheet", type='text/css',  href=app_assets_path + '/vendors/animate-css/animate.css')
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/chartist-js/chartist.min.css')
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/chartist-js/chartist-plugin-tooltip.css')
+
+//- Vendor JS	
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(src=app_assets_path + '/vendors/chartjs/chart.min.js')
+	script(src=app_assets_path + '/vendors/chartist-js/chartist.min.js')
+	script(src=app_assets_path + '/vendors/chartist-js/chartist-plugin-tooltip.js')
+	script(src=app_assets_path + '/vendors/chartist-js/chartist-plugin-fill-donut.min.js')
+
+//- Page CSS
+//------------------------------
+//- Add custom page specific CSS
+append pagecss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/css'+rtl+'/pages/dashboard-modern.css')
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/css'+rtl+'/pages/intro.css')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	//- Dashboard custom js	
+	script(src=app_assets_path + '/js/scripts/dashboard-modern.js')
+	script(src=app_assets_path + '/js/scripts/intro.js')

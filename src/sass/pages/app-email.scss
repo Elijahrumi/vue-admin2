@@ -1,0 +1,401 @@
+/*----------------------------------------
+  Email App
+------------------------------------------*/
+
+@import 'variables.scss';
+
+// app-email css
+.app-email {
+	.content-area {
+		margin-top: 49px;
+		width: calc(100% - 280px);
+
+		&.content-left {
+			float: left;
+		}
+
+		&.content-right {
+			float: right;
+		}
+
+		.app-wrapper {
+			.app-search {
+				position: relative;
+
+				.search-icon {
+					position: absolute;
+					top: 15px;
+					left: 15px;
+					color: color('grey', 'lighten-1');
+				}
+
+				.app-filter {
+					background-color: $white;
+					border: none;
+					max-width: calc(100% - 3rem);
+					border-radius: 0.4rem;
+					padding: 0.2rem;
+					padding-left: 2.75rem;
+					margin-bottom: 0.5rem;
+					box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+
+					&:focus {
+						box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2) !important;
+						border-bottom: none !important;
+					}
+				}
+			}
+
+			// List Items
+			.email-header {
+				display: flex;
+				justify-content: space-between;
+				padding: 1rem 1.5rem 1rem 0;
+				border-bottom: 1px solid color('grey', 'lighten-2');
+
+				.left-icons {
+					display: flex;
+					justify-content: space-around;
+					align-items: baseline;
+
+					.action-icons {
+						display: flex;
+						justify-content: space-around;
+						align-items: center;
+						margin-left: 1rem;
+						width: 250px;
+					}
+				}
+
+				i.material-icons {
+					cursor: pointer;
+					color: color('grey', 'base');
+				}
+
+				.header-checkbox {
+
+					[type="checkbox"]+span:not(.lever):before,
+					[type="checkbox"]:not(.filled-in)+span:not(.lever):after {
+						border-radius: 4px !important;
+						opacity: 0.5;
+						margin-left: 1.5rem;
+					}
+				}
+			}
+
+			.delete-task,
+			.delete-tasks,
+			.sort-task {
+				cursor: pointer;
+			}
+
+			.collection {
+				margin: 0;
+				border: 0;
+
+				.collection-item {
+					display: flex;
+					justify-content: space-between;
+					padding-left: 0;
+					padding-right: 0;
+					margin: auto 1.35rem;
+
+					.list-content {
+						width: 85%;
+
+						.list-title-area {
+							display: flex;
+							justify-content: space-between;
+							margin-bottom: 0.75rem;
+
+							.user-media {
+								display: flex;
+								justify-content: space-around;
+								align-items: center;
+
+								img.avtar {
+									width: 38px;
+									height: 38px;
+									margin-right: 0.75rem;
+								}
+							}
+						}
+
+						.list-title {
+							font-weight: 700;
+							color: color('grey', 'darken-3');
+						}
+
+						.list-desc {
+							color: color('grey', 'darken-2');
+							margin-top: 0.25rem;
+							font-size: 0.9rem;
+							line-height: 1.35rem;
+							overflow: hidden;
+							text-overflow: ellipsis;
+							display: -webkit-box;
+							-webkit-line-clamp: 2;
+							-webkit-box-orient: vertical;
+						}
+
+						.badge {
+							display: flex;
+							border-radius: 4px;
+							font-size: 0.8rem;
+							color: color('grey', 'darken-2');
+							padding-right: 8px;
+
+							i {
+								font-size: 1rem;
+								line-height: 1.5rem;
+								margin-right: 0.25rem !important;
+							}
+						}
+					}
+
+					.list-date {
+						font-size: 0.8rem;
+						color: color('grey', 'darken-2');
+					}
+
+					.favorite,
+					.email-move,
+					.delete-task,
+					.email-label,
+					.attach-file {
+						i.material-icons {
+							color: color('grey', 'lighten-1');
+							cursor: pointer;
+						}
+					}
+
+					.attach-file {
+						i.material-icons {
+							transform: rotate(270deg);
+							font-size: 1.4rem;
+						}
+					}
+
+					.email-move {
+						i.icon-move {
+							margin-top: 15px;
+						}
+					}
+
+					[type="checkbox"]+span:not(.lever):before,
+					[type="checkbox"]:not(.filled-in)+span:not(.lever):after {
+						border-radius: 4px !important;
+						opacity: 0.5;
+						margin-left: 3px;
+					}
+				}
+			}
+		}
+
+		.animate.fadeUp {
+			animation-duration: 1s;
+		}
+
+		.delay-6 {
+			animation-delay: 0.8s !important;
+		}
+
+		.no-data-found {
+			display: none !important;
+
+			&.show {
+				display: block !important;
+			}
+		}
+	}
+}
+
+// quill editor
+.snow-container {
+	border: 1px solid #DFE3E7;
+	border-radius: 4px;
+	padding: 1rem;
+
+	.ql-snow,
+	.ql-toolbar {
+		border: none;
+	}
+
+	// Ql-link set width
+	.ql-tooltip {
+		left: 0 !important;
+
+		input[type=text] {
+			width: 100px;
+		}
+	}
+}
+
+// placeholder position
+.ql-editor.ql-blank::before {
+	left: 0.3rem;
+}
+
+.ql-editor {
+	min-height: 7.93rem;
+	padding: 0;
+}
+
+// Drag and drop css
+body.dragging,
+body.dragging * {
+	cursor: move !important;
+}
+
+.dragged {
+	position: absolute;
+	opacity: 0.5;
+	z-index: 2000;
+}
+
+// email compose sidebar
+.email-compose-sidebar{
+  /* email sidebar */
+    box-shadow: -8px 0 18px 0 rgba(25,42,70,0.13);
+    width: 24.8rem;
+    background-color: white;
+    position: fixed;
+    transform: translateX(110%);
+    transition: all .3s ease;
+    z-index: 1003;
+    right: 2rem;
+    left: auto;
+    bottom: 0;
+    top: -1px;
+    opacity: 0;
+    // email-compose-sidebar - display
+    &.show{
+      opacity: 1;
+      transform: translateX(9%) translateY(1px);
+    }
+      // Close Icon
+      .card{
+        box-shadow: none;
+        .card-header{
+          justify-content: space-between;
+          align-items: center;
+          .close-icon{
+            cursor: pointer;
+            i{
+              font-size: 1.2rem;
+            }
+            &:focus{
+              outline: none;
+            }
+          }
+        }
+      }
+    // Edit email sidebar Items
+    .edit-email-item{
+      // Custom-file label background
+      .file-field{
+        display: flex;
+        align-items: center;
+        .btn-file{
+          height: 2rem;
+    			line-height: 0.2rem;
+   				padding: 1.2rem 1rem;
+        }
+      }
+      // select options
+      select{
+        option{
+          font-weight: 700;
+          height: 32px;
+          width: 50px
+        }
+      }
+    }
+    // quill editor
+    .quill-wrapper{
+      .snow-container{
+        border: 1px solid color("grey","lighten-2");
+        border-radius: 4px;
+        padding: 1rem;
+        .ql-snow, .ql-toolbar{
+          border: none;
+        }
+        .ql-toolbar{
+          .btn{
+            width: auto;
+            line-height: 0.9;
+            padding: 0.467rem 1rem;
+            font-size: .8rem;
+            color: white;
+            margin-left: .8rem;
+            &:hover{
+              color: White;
+            }
+          }
+        }
+        // Ql-link set width
+        .ql-tooltip{
+          left: 0 !important;
+          input[type=text]{
+            width: 100px;
+          }
+        }
+      }
+      // placeholder position
+      .ql-editor.ql-blank::before{
+        left: 0.3rem;
+      }
+      .ql-editor{
+        min-height: 7.93rem;
+        padding: 0;
+      }
+		}
+		.cancel-email-item{
+		background: $secondary-color;
+		}
+		.send-email-item{
+			background-color: $primary-color;
+		}
+}
+// email sidebara overlay
+
+.email-overlay{
+	/* email overlay */
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		position: absolute;
+		z-index: 999;
+		visibility: hidden;
+		opacity: 0;
+		&.show{
+			visibility: visible;
+			transition: all .3s ease;
+			opacity: 1;
+			background-color: rgba(#000, 0.2);
+		}
+}
+
+// Responsive css
+
+@media (max-width: 900px) {
+	.content-area {
+		margin-top: -110px !important;
+
+		&.content-right,
+		&.content-left {
+			width: 100%;
+			float: none !important;
+			z-index: 1;
+		}
+	}
+
+	.sidebar {
+		.sidebar-content {
+			.sidenav-trigger {
+				top: 87px;
+			}
+		}
+	}
+}

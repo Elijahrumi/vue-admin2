@@ -1,0 +1,40 @@
+/*-------------------------------------------------
+  Dashboard common file for Analytics & eCommmerce
+--------------------------------------------------*/
+
+@import 'variables.scss';
+
+#revenue-chart{
+	span i.material-icons{
+		top: 5px;
+		position: relative;
+	}
+	.yearly-revenue-chart {
+	    position: relative;
+	    canvas{
+	        width: 100% !important;        
+	        height: 350px !important;
+	    }
+	    canvas.firstShadow {
+	      position: absolute;
+	      left: 0px;
+	      top: 0px;
+	    }
+	}
+}
+#weekly-earning{
+	h3.header{
+		margin: 2.4rem 0 2.3rem 0
+	}
+	canvas{
+        width: 100% !important;     
+        height: 110 !important;
+        margin: 10px 0 10px -18px;
+    }
+    .center-align{
+    	p{
+    		margin-bottom: 1rem;
+    	}
+    }
+}
+

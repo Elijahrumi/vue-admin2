@@ -1,0 +1,382 @@
+@import 'variables.scss';
+$invoice-border-color:#e8e8e8;
+
+ /* Invoice list */
+/*---------------*/
+.invoice-list-wrapper{
+  margin-top: 45px;
+  margin-bottom: 22px;
+
+  /* invoice wrapper */
+  .responsive-table {
+    .top {
+      .action-filters {
+        flex-grow: .95;
+
+        .dataTables_filter {
+          width: 100%;
+          padding-right: 30px;
+
+          label {
+            position: relative;
+
+            input[type="search"] {
+              border: 1px solid color("grey", "base") !important;
+              background: white;
+              margin: 0;
+              height: 3.2rem;
+              padding-left: 1.5rem;
+              border-radius: 150px;
+              border-bottom: none;
+
+              &:focus {
+                box-shadow: none;
+              }
+            }
+
+            .filter-btn {
+              position: absolute;
+              right: 7px;
+              top: -12px;
+            }
+          }
+        }
+      }
+
+      .action-btns {
+        flex-grow: .05;
+        justify-content: space-around;
+      }
+    }
+
+    /* data table */
+    .invoice-data-table {
+      border-collapse: collapse;
+      box-shadow: box-shadow .25s;
+
+      th {
+        width: auto !important;
+        padding: 19px 15px;
+        border-bottom: 1px solid color("grey", "lighten-2");
+      }
+
+      &.dataTable tbody td {
+        padding: .8rem .8rem;
+
+        .invoice-action {
+          a {
+            color: color("grey", "base");
+
+            i {
+              font-size: 1.5rem;
+            }
+          }
+        }
+      }
+
+      tr:last-child {
+        border-bottom-color: transparent;
+      }
+
+      .dt-checkboxes-cell {
+
+        /* Data Table checkbox style */
+        input {
+          opacity: .5;
+          -webkit-appearance: none;
+
+          &::before,
+          &::after {
+            content: '';
+            position: absolute;
+            border-radius: 4px;
+            top: -4px;
+            left: 0;
+            width: 18px;
+            height: 18px;
+            z-index: 0;
+            border: 2px solid color("grey", "base");
+            margin-top: -3px;
+            transition: .2s;
+          }
+
+          &:checked:before,
+          &:checked::after {
+            top: -4px;
+            left: -5px;
+            width: 12px;
+            height: 22px;
+            border-top: 2px solid transparent;
+            border-left: 2px solid transparent;
+            border-right: 2px solid color("pink", "accent-2");
+            border-bottom: 2px solid color("pink", "accent-2");
+            transform: rotate(40deg);
+            backface-visibility: hidden;
+            transform-origin: 100% 100%;
+          }
+        }
+      }
+    }
+
+    /* Data table Pagination*/
+    .bottom {
+      margin-top: 1rem;
+
+      .dataTables_paginate {
+        .paginate_button {
+          padding: 0.25em 0.65em;
+          margin-top: 0.25rem;
+
+          &.current,
+          &:hover {
+            border-radius: 4px;
+            background: color("indigo", "base");
+            border: 1px solid color("indigo", "base");
+            box-shadow: 0px 0px 8px 0px #3f51b5;
+            color: white !important;
+          }
+        }
+      }
+    }
+
+    /* small bullet*/
+    .bullet {
+      height: 10px;
+      width: 10px;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: .2rem;
+    }
+  }
+}
+
+/* Invoice */
+/*--------*/
+.invoice-view-wrapper {
+  .invoice-calc {
+    .invoice-title {
+      width: 171px;
+    }
+  }
+
+  .invoice-from,
+  .invoice-to {
+    font-size: 16px;
+    font-weight: bold;
+    color: $body-font-color;
+    margin-bottom: 1rem;
+  }
+.invoice-action-wrapper{
+  .invoice-action-btn{
+    margin-bottom: .8rem;
+  }
+}
+  .invoice-address {
+    margin-bottom: 1rem;
+  }
+}
+
+/* Invoice Edit and Add */
+/*----------------------*/
+
+.invoice-edit-wrapper{
+  .invoice-date-picker{
+    /* Date Picker label */
+    small {
+      white-space: nowrap;
+    }
+  }
+
+  // specific class only for invoice app
+  .px-36 {
+    padding-left: 36px;
+    padding-right: 36px;
+  }
+
+  /* Invoice Item */
+  .invoice-item {
+    border: 1px solid $invoice-border-color;
+    border-radius: 4px;
+
+    /* Invoice Icon*/
+    .invoice-icon {
+      border-left: 1px solid $invoice-border-color;
+      padding: 5px;
+    }
+
+    /* invoice Item field*/
+    .invoice-item-filed {
+      padding: .8rem;
+    }
+
+    /* dropdown content */
+    .dropdown-content {
+      width: 254px;
+      padding: 10px;
+      overflow: visible;
+    }
+  }
+
+  .delete-row-btn,
+  .dropdown {
+    text-align: center;
+    cursor: pointer;
+
+    i {
+      font-size: 1.2rem;
+    }
+  }
+
+  /* Invoice action button */
+  .invoice-action-wrapper {
+    .invoice-action-btn {
+    margin-bottom: .8rem;
+      .preview,
+      .save {
+        padding: 0 0.75rem;
+      }
+    }
+
+    .btn {
+      padding: 0 0;
+    }
+  }
+
+  /* border color all form element*/
+  textarea.materialize-textarea,
+  input,
+  select {
+    border-bottom: 1px solid $invoice-border-color !important;
+  }
+}
+
+@media (min-width:600px){
+  /* responsive table*/ 
+  .responsive-table{
+    .top{
+      .action-btns,
+      .action-filters {
+
+        /* filters btn positioning on above middium screen */
+        .btn {
+          padding: 0 1rem;
+
+          i {
+            float: left;
+            margin-right: 8px;
+          }
+        }
+      }
+    }
+  }
+
+  .invoice-date-picker {
+    justify-content: flex-end;
+  }
+
+  .invoice-logo {
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width:600px) {
+  .invoice-payment {
+    border: 1px solid $invoice-border-color;
+    border-radius: 4px;
+    padding: 1rem;
+  }
+
+  /* Date picker*/
+  .invoice-date-picker {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width:1054px) and (min-width:600px) {
+  .invoice-action-wrapper {
+    .btn {
+      .responsive-text {
+        /* Button text */
+        font-size: .8rem;
+      }
+    }
+  }
+}
+
+@media (min-width:1201px) {
+  .invoice-view-wrapper {
+    .invoice-date {
+      justify-content: flex-end;
+    }
+  }
+}
+
+@media print {
+
+  /* Hide a Unnecessary div while print invoice*/
+  html,body {
+    visibility: hidden;
+  }
+
+  .invoice-print-area {
+    visibility: visible;
+    page-break-after: auto;
+   .divider{
+     margin: .5rem 0 !important;
+   }
+  }
+
+  .invoice-action-wrapper,
+  .sidenav-main,
+  .navbar,
+  .btn-customizer,
+  .theme-cutomizer,
+  .btn-buy-now,
+  .page-footer {
+    display: none;
+  }
+
+  /* card shadow remove while printing invoice*/
+  .card {
+    box-shadow: none;
+
+    .card-content {
+      padding: 0 !important;
+    }
+  }
+
+  /* table border added while printing invoice*/
+  table {
+    th,
+    td {
+      border: 1px solid $invoice-border-color;
+    }
+  }
+
+  /* column size change*/
+  .invoice-subtotal {
+    .row {
+      .col {
+        width: 50% !important;
+      }
+    }
+  }
+
+  .invoice-date-number,
+  .invoice-logo-title,
+  .invoice-info {
+    .col {
+      width: 50% !important;
+    }
+  }
+
+}
+
+// omitted header and footer while print 
+@page {
+  size: auto;
+  /* auto is the initial value */
+  margin: 0; 
+  padding: 0;
+  /* this affects the margin in the printer settings */
+}

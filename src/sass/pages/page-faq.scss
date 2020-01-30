@@ -1,0 +1,122 @@
+/*----------------------------------------
+    Page FAQ
+------------------------------------------*/
+
+@import 'variables.scss';
+
+#faq{
+    .faq-search-image{
+        background-image: url("../../images/gallery/faq-search.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .search-shadow {
+        box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -7px rgba(0, 0, 0, 0.2);
+        width: 95%;
+        border-radius: 3rem;
+        padding-left: 1rem;
+    }
+    .faq-card{
+        :hover{
+            i{
+                text-shadow:2px 2px 6px color("blue-grey", "lighten-3");
+                padding-left: 0.5rem;
+                transition: 0.3s ease-in-out;
+            }
+        }
+    	i{
+    		font-size: 3rem;
+            transition: 0.3s ease-in-out;
+    	}
+    }
+}
+
+
+#faq, #faq-detail{
+    img{
+        width: 40px;
+    }
+    .p-35{
+        padding: 35px;
+    }
+    .card-content{
+        .category-list{
+            p{
+                transition: 0.3s ease-in-out;
+                &:hover{
+                    padding-left: 0.3rem;
+                    transition: 0.3s ease-in-out;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+    .categories-collapsible{
+        box-shadow:none;
+        border: none;
+        li{
+          &.active {
+            border-bottom: 1px solid color("blue-grey", lighten-5);
+            margin-bottom: 0.8rem; 
+                i{
+                    transform: rotate(90deg);
+                }
+            }
+        }
+        .collapsible-header{
+            border: none;
+            margin-bottom: 0.5rem;
+            box-shadow: 0px 0px 3px 0px #00000017;
+            i{
+              position: absolute;
+              right: 2rem;
+              transition: all 0.3s;
+            }
+        }
+    }
+    .collapsible-body{
+        padding: 0px;
+        padding-left: 1rem;
+        padding-right: 1rem; 
+        padding-top: 5px;
+        border: 0px;
+      p{
+        margin-top: 5px;
+        cursor: pointer;
+        font-size: 0.9rem;
+      }
+    }
+}
+
+
+
+/*----------------------------------------
+    Page FAQ Detials
+------------------------------------------*/
+#faq-detail{
+    .faq-search-image{
+        background-image: url("../../images/gallery/faq-search.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .search-shadow {
+        box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -7px rgba(0, 0, 0, 0.2);
+        width: 95%;
+        border-radius: 3rem;
+        padding-left: 1rem;
+    }
+    i{
+        font-size: 1.2rem;
+        margin-right: 0.5rem;
+    }
+      .card-content{
+        .text-sm{
+            font-size: 0.8rem;
+            color: color("grey", lighten-1);
+        }
+        .card-title{
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+      }
+}

@@ -1,0 +1,58 @@
+/*----------------------------------------
+    Profile Page
+------------------------------------------*/
+
+@import 'variables.scss';
+#user-profile{
+    .user-section-negative-margin{
+        margin-top: -115px;
+        position: relative;
+    }
+    .card-border{
+        border-radius: 10px;
+    }
+    .photo-border{
+        border-radius: 6px;
+    }
+    .vertical-align-bottom{
+        vertical-align: bottom;
+    }
+    .vertical-align-middle{
+        vertical-align: middle; 
+    }
+    .user-card-negative-margin{
+        margin-top: -13px;
+    }
+    .star-width{
+        width: 18px;
+        font-size: 20px;
+        cursor: pointer;
+    }
+    .material-icons.vertical-align-middle{
+        vertical-align: middle;
+    }
+    .latest-update{
+        cursor: pointer;
+    }
+    .user-projects{
+        img.responsive-img{
+            cursor: pointer;
+        }
+    }
+    #feed{
+        .social-icon{
+            .material-icons{
+                cursor: pointer;
+            }
+        }
+    }
+    hr{
+        opacity: 0.4;
+    }
+}
+
+@media only screen and (max-device-width: 1024px){
+    .user-profile{
+        margin-top: 1rem;
+    }
+}

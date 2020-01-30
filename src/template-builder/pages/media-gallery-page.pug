@@ -1,0 +1,48 @@
+//- =========================================================================================
+	File Name: media-gallery-page.pug
+	Description: Media Gallery Page
+	----------------------------------------------------------------------------------------
+	Item Name: Materialize - Material Design Admin Template
+	Version: 5.0
+	Author: PixInvent
+	Author URL: https://pixinvent.com/
+	==========================================================================================
+
+
+extends template
+
+block pageVars
+	- var pageTitle = "Media Gallery Page"
+	- var pageSubTitle = ""
+	- var description = "The standard font Material Design uses is Roboto. We have included the font files with our framework.."
+	- var activeParentMenu = "medias"
+	- var activeMenu = "media-gallery-page"
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"}, {url:"#",name:"Pages"}, {name:"Media Gallery Page"}])
+
+//- Include page content in page block
+append content
+	include ../contents/media-gallery-page.html
+	include ../contents/sidebar/right-sidebar.html
+	include ../contents/sidebar/fab-menu.html
+
+//- Vendor css
+//- Add vendor specific CSS
+append vendorcss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/flag-icon/css/flag-icon.min.css')
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/magnific-popup/magnific-popup.css')
+	
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(src=app_assets_path + '/vendors/magnific-popup/jquery.magnific-popup.min.js')
+	script(src=app_assets_path + '/vendors/imagesloaded.pkgd.min.js')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	script(src=app_assets_path + '/js/scripts/media-gallery-page.js')

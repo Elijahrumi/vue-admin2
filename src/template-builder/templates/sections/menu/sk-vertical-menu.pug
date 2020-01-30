@@ -1,0 +1,61 @@
+- var sk_path = "../../../starter-kit/"+ useDirection +"/"+ useLayout +"/"
+- var query_string = "?lng=en"
+// BEGIN: SideNav
+//- main menu
+aside.sidenav-main.nav-expanded.nav-lock.nav-collapsible(class= menuColor)
+  //- main menu header
+  //- include includes/menu-header
+  //- / main menu header
+  .brand-sidebar
+    h1.logo-wrapper
+      a.brand-logo.darken-1(href='index.html')
+        if (logoType === 'dark')
+          img(src='../../../app-assets/images/logo/materialize-logo-color.png', alt='materialize logo',class="hide-on-med-and-down")
+          img(src='../../../app-assets/images/logo/materialize-logo.png', alt='materialize logo', class="show-on-medium-and-down hide-on-med-and-up")
+        else
+          if(dataMenu !=='vertical-menu-nav-dark')
+            img(src='../../../app-assets/images/logo/materialize-logo.png', alt='materialize logo',class="hide-on-med-and-down ")
+            img(src='../../../app-assets/images/logo/materialize-logo-color.png', alt='materialize logo', class="show-on-medium-and-down hide-on-med-and-up")
+          else
+            img(src='../../../app-assets/images/logo/materialize-logo.png', alt='materialize logo')
+        span.logo-text.hide-on-med-and-down Materialize
+      a.navbar-toggler(href='#')
+        i.material-icons radio_button_checked
+  //- main menu content  
+  +verticalMenu([
+    
+ 
+
+    {url:"#",name:"Pages", i18n:"Pages", class:"collapsible-header waves-effect waves-cyan",slug:"pages",icon:"pages",
+      submenu:[
+        {url:"page-blank.html", name:"Page Blank", i18n:"Page Blank", slug:"page-blank"},
+      ]
+    },
+
+    {navheader:"Misc ",icon:"remove"},
+    
+    {url:"#",name:"Menu levels", i18n:"Menu levels", class:"collapsible-header waves-effect waves-cyan",icon:"photo_filter",slug:"",          
+        submenu:[
+          {url:"#",name:"Second level", i18n:"Second level", slug:""},
+          {url:"#", class:"collapsible-header waves-effect waves-cyan" ,name:"Second level child", i18n:"Second level child", slug:"",
+            submenu:[
+              {url:"#",name:"Third level", i18n:"Third level", slug:""}                
+            ]
+          },
+        ]
+      },
+    {url:"changelog.html" ,name:"Changelog", i18n:"Changelog", class:"waves-effect waves-cyan" ,icon:"track_changes",slug:"changelog", tag:"6.0" , tagcustom: "badge pill light-blue float-right mr-10"},
+    {url:"https://pixinvent.com/materialize-material-design-admin-template/documentation/" ,name:"Documentation", i18n:"Documentation", class:"waves-effect waves-cyan" ,icon:"import_contacts",slug:"documentation",  newTab:"_blank"},
+    {url:"https://pixinvent.ticksy.com/" ,name:"Support", i18n:"Support", class:"waves-effect waves-cyan" ,icon:"help_outline",slug:"support",  newTab:"_blank"},
+  ])
+  div(class="navigation-background")
+  a.sidenav-trigger.btn-sidenav-toggle.btn-floating.btn-medium.waves-effect.waves-light.hide-on-large-only(href='#', data-target='slide-out')
+    i.material-icons menu
+
+  //- /main menu content
+
+  //- main menu footer
+  //- include includes/menu-footer
+  //- main menu footer
+//- / main menu
+// END: SideNav

@@ -1,0 +1,61 @@
+//- =========================================================================================
+	File Name: page-account-settings.pug
+	Description: Page account settings
+	----------------------------------------------------------------------------------------
+	Item Name: Materialize - Material Design Admin Template
+	Version: 1.0
+	Author: PixInvent
+	Author URL: https://pixinvent.com/
+	=========================================================================================
+
+
+extends template
+
+block pageVars
+	- var pageTitle = "Account Settings"
+	- var pageSubTitle = ""
+	- var description = "The standard font Material Design uses is Roboto. We have included the font files with our framework."
+	- var activeParentMenu = "pages"
+	- var activeMenu = "page-account-settings"
+
+append footerConfig
+	//- // - var footerType = 'footer-fixed'
+
+append header
+	- var contentBreadcrumbs = true
+	- var contentHeader = true
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"}, {url:"#",name:"Pages"}, {name:"Page Account Settings"}])
+
+//- Include page content in page block
+append content
+	include ../contents/page-account-settings.html
+	include ../contents/sidebar/right-sidebar.html
+
+//- Vendor css
+//- Add vendor specific CSS
+append vendorcss
+	link(rel ='stylesheet' href=app_assets_path + '/vendors/select2/select2.min.css', type='text/css')
+	link(rel ='stylesheet' href=app_assets_path + '/vendors/select2/select2-materialize.css', type='text/css')
+
+
+//- Page CSS
+//------------------------------
+//- Add custom page specific CSS
+append pagecss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/css'+rtl+'/pages/page-account-settings.css')
+
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(src=app_assets_path + '/vendors/select2/select2.full.min.js')
+	script(src=app_assets_path + '/vendors/jquery-validation/jquery.validate.min.js')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	script(src=app_assets_path + '/js/scripts/page-account-settings.js')

@@ -1,0 +1,30 @@
+if(contentHeader)
+  .content-wrapper-before(class= headerBGColor)
+
+if(contentBreadcrumbs)
+  div#breadcrumbs-wrapper.breadcrumbs-inline.pt-3.pb-1
+    // Search for small screen
+    //- .header-search-wrapper.grey.lighten-2.hide-on-large-only
+    //-   input.header-search-input.z-depth-2(type='text', name='Search', placeholder='Explore Materialize')
+    .container
+      .row
+        .col.s10.m6.l6.breadcrumbs-left
+          h5.breadcrumbs-title.mt-0.mb-0.display-inline.hide-on-small-and-down
+            span #{pageTitle}
+          block breadcrumbs
+        .col.s2.m6.l6
+          a.btn.btn-floating.dropdown-settings.waves-effect.waves-light.breadcrumbs-btn.right(href='#!', data-target='dropdown1')
+            i.material-icons expand_more            
+            i.material-icons.right arrow_drop_down
+          ul#dropdown1.dropdown-content(tabindex='0', style='')
+            li(tabindex='0')
+              a.grey-text.text-darken-2(href='user-profile-page.html')
+                | Profile
+                span.new.badge.red 2
+            li(tabindex='0')
+              a.grey-text.text-darken-2(href='app-contacts.html') Contacts
+            li(tabindex='0')
+              a.grey-text.text-darken-2(href='page-faq.html') FAQ
+            li.divider(tabindex='-1')
+            li(tabindex='0')
+              a.grey-text.text-darken-2(href='user-login.html') Logout

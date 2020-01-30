@@ -1,0 +1,52 @@
+//- =========================================================================================
+	File Name: form-wizard.pug
+	Description: Form Wizard
+	----------------------------------------------------------------------------------------
+	Item Name: Materialize - Material Design Admin Template
+	Version: 5.0
+	Author: PixInvent
+	Author URL: https://pixinvent.com/
+	==========================================================================================
+
+
+extends template
+
+block pageVars
+	- var pageTitle = "Form Wizard"
+	- var pageSubTitle = ""
+	- var description = "The standard font Material Design uses is Roboto. We have included the font files with our framework.."
+	- var activeParentMenu = "form-wizard"
+	- var activeMenu = "form-wizard"
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"}, {url:"#",name:"Form"}, {name:"Form Wizard"}])
+
+//- Include page content in page block
+append content
+	include ../contents/form-wizard.html
+	include ../contents/sidebar/right-sidebar.html
+	include ../contents/sidebar/fab-menu.html
+
+//- Vendor css
+//- Add vendor specific CSS
+append vendorcss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/flag-icon/css/flag-icon.min.css')
+	link(rel="stylesheet" type='text/css',  href=app_assets_path + '/vendors/materialize-stepper/materialize-stepper.min.css')
+
+
+//- Page CSS
+//------------------------------
+//- Add custom page specific CSS
+append pagecss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/css'+rtl+'/pages/form-wizard.css')
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(src=app_assets_path + '/vendors/materialize-stepper/materialize-stepper.min.js')
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	script(src=app_assets_path + '/js/scripts/form-wizard.js')

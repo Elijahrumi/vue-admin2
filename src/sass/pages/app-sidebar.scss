@@ -1,0 +1,233 @@
+/*----------------------------------------
+  App Sidebar (Common file)
+------------------------------------------*/
+
+@import 'variables.scss';
+
+.sidebar-left{
+	float: left;
+}
+.sidebar-right{
+	float: right;
+}
+.small-icons{
+	font-size: 1.25rem;
+	line-height: 1.65rem;
+}
+
+.sidebar{
+	width: 280px;
+	.sidebar-content{
+		.sidebar-header{
+			height: 185px;
+			position: relative;
+			top: 50px;
+			.sidebar-details{
+				.sidebar-title{
+					font-weight: 700;
+					line-height: 2.25rem;
+				}
+				.text-muted{
+					color: color('grey', 'darken-1');
+					font-size: 0.8rem;
+					margin-top: 0.1rem;
+				}
+				.app-header-icon{
+					font-size: 2.3rem;
+					vertical-align: bottom;
+				}
+				.media-image{
+					padding-right: 0 !important;
+					line-height: 1rem;
+					img {
+						width: 85%;
+					}
+				}
+				.name{
+					color: color('blue-grey', 'darken-4');
+				}
+			}
+		}
+		.app-sidebar {
+			i{
+				vertical-align: middle;
+				font-size: 21px;
+				line-height: 0;
+			}
+			.sidebar-title{
+				text-transform: uppercase;
+				font-weight: 700;
+				padding: 15px 8px;
+				color: color('grey','darken-4');
+			}
+		}
+		.sidenav-trigger{
+			display: none;
+		}
+		.sidebar-menu{
+			&#sidebar-list{
+				position: absolute;
+				height: calc( 100vh - 325px );
+				overflow: hidden;
+				margin-left: -1.4rem;
+				padding-left: 1.4rem;
+				width: 280px;
+			}
+			ul{
+				line-height: 1.5rem;
+				li{
+					padding-bottom: 8px;
+					padding-top: 8px;
+					// padding-left: 12px;
+					cursor: pointer;
+					margin-right: 20px;
+				}
+				a{
+					color: color('grey','darken-1');
+					padding: 0.5rem;
+					line-height: 1.75rem;
+					vertical-align: top;
+				}
+				li.active{
+					background-color: $primary-color;
+					border-top-right-radius: 2rem;
+					border-bottom-right-radius: 2rem;
+					box-shadow: 0px 0px 8px 0px $primary-color;
+					margin-left: -1.8rem;
+					padding-left: 1.8rem;
+					a{
+						color: $white;
+					}
+				}
+			}
+		}
+		.sidenav-trigger{
+			position: absolute;
+			left: 17px;
+			top: 90px;
+			display: none;
+		}
+	}
+}
+// Dark layout sidebar header text css
+.page-header-dark{
+	.sidebar{
+		.sidebar-content{
+			.sidebar-header{
+				.sidebar-details{
+					.sidebar-title{
+						color: $white;
+					}
+					.subtitle{
+						color: color('blue-grey', 'lighten-4');
+					}
+					p{
+						color: color('grey', 'lighten-4');
+					}
+				}
+			}
+			.sidenav-trigger{
+				i{
+					color: $white;
+					vertical-align: middle;
+				}
+			}
+		}
+	}
+}
+@media (min-width: 900px) {
+	.app-sidebar {
+		transform: none !important;
+	}
+	.sidenav-overlay{
+		display: none !important;
+		opacity: 0 !important;
+	}
+}
+@media (max-width: 900px) {
+	.app-sidebar {
+		transform: translateX(-105%);
+	}
+	.sidenav-overlay{
+		z-index: 995;
+	}
+	.sidebar-left,
+	.sidebar-right{
+		float: none !important;
+	}
+	.sidebar{
+		.sidebar-content{
+			.sidebar-header{
+				left: 30px;
+				top: 20px !important;
+				z-index: -1;
+				p,.media-image{
+					display: none;
+				}
+			}
+			li{
+				>a{
+					height: 2rem;
+					>i.material-icons{
+						line-height: 22px;
+						height: 28px;
+					}
+				}
+				a{
+					&.collapsible-header{
+						i.material-icons{
+							line-height: 22px;
+							height: 28px;
+						}
+					}
+				}
+				&.active{
+					a{
+						i{
+							color: $white;
+						}
+					}
+				}
+			}
+			.sidebar-menu{
+				ul{
+					margin-left: 0rem;
+				}
+				&#sidebar-list{
+					position: absolute;
+					height: calc( 100% - 56px) !important;
+					overflow: hidden;
+					// width: 230px !important;
+					top: 56px;
+					left: 0;
+					.app-sidebar{
+						z-index: 998;
+						position: absolute;
+						background: #fff;
+						padding-left: 25px;
+						height: 100%;
+						top: 8px;
+						width: 300px;
+						padding-right: 1rem;
+					}
+				}
+			}
+			.sidenav-trigger{
+				display: block;
+			}
+			#sidebar-list{
+				&.sidebar-show{
+					z-index: 996;
+				}
+			}
+		}
+	}
+}
+@media (max-width: 600px) {
+	.sidebar .sidebar-content .sidebar-header{
+		top: 30px !important;
+	}
+	.sidebar .sidebar-content .sidebar-menu#sidebar-list .app-sidebar{
+		top: 0;
+	}	
+}

@@ -1,0 +1,209 @@
+/*----------------------------------------
+Intro
+------------------------------------------*/
+
+
+@import 'variables.scss';
+
+#intro{
+    .modal{
+
+        // When modal opens
+
+        &.open{
+            height: 100%;
+            max-height: 80%;
+            .modal-content{
+                height: 100%;
+                overflow: hidden;
+            }
+        }
+
+        .modal-close{
+           span{
+               i.material-icons{
+                font-size: 16px;
+                margin-left: 5px;
+                position: relative;
+                top: 2px;
+               }
+           }
+        }
+
+
+        // For carousel in modal
+
+    .modal-content{
+
+    
+        .carousel.carousel-slider {
+            height: 100% !important;
+    
+            .carousel-fixed-item{
+            .middle-indicator-text{
+                position: absolute;
+                &.moveNextCarousel{
+                    right:-0px;
+                    border-radius: 30px;
+                    top: -5px;
+                    &:hover{
+                        background-color: map-get($map: $purple, $key: darken-1);
+                        color: $white !important;
+                    }
+                }
+                &.movePrevCarousel{
+                    left:-0px;
+                    top: -5px;
+                    border-radius: 30px;
+                    &:hover{
+                        background-color: map-get($map: $purple, $key: darken-1);
+                        color: $white !important;
+                        }
+                    }
+                }
+                i.material-icons{
+                    position: relative;
+                    top: 4px;
+                    line-height: 1;
+                }
+            }
+            .carousel-item {
+                .slide-1-img,.slide3-img{
+                    width: 200px;
+                }
+
+                .slide-2-img{
+                    width: 160px;
+                }
+    
+                .intro-step-title{
+                    color: map-get($map: $purple, $key: darken-1)
+                }
+    
+                &.slide-2{
+                    .select-wrapper{
+                        input.select-dropdown{
+                            text-overflow: ellipsis;
+                        }
+                    }
+                }
+                &.slide-3{
+                    ul.feature-list{
+                        li{
+                            i.material-icons{
+                                position: relative;
+                                top: 7px;
+                                color:  map-get($map: $purple, $key: darken-1);
+                            }
+                        }
+                    }
+                    .get-started{
+                        border-radius: 30px;
+                    }
+                }
+            }
+            ul.indicators{
+                bottom: 20px;
+                .indicator-item{
+                    background-color: map-get($map: $grey, $key: base);
+                    &.active{
+                        background-color:  map-get($map: $purple, $key: darken-1);
+                        }
+                    }
+                }
+            }
+        
+        &:after{
+            background: url('../../../app-assets/images/gallery/wave.png');
+            background-size: cover;
+            }
+        }
+
+        .bg-img-div{
+            
+        background: url('../../../app-assets/images/gallery/wave.png');
+        background-size: cover;
+        width: 90%;
+        height: 100px;
+        position: absolute;
+        bottom: 0;
+        overflow: hidden;
+        opacity: 1;
+        }
+    }
+}
+@media(min-width:992px){
+    #intro{
+        .modal{
+            width:35% !important;
+        }
+    }
+}
+@media(min-width:1024px) and (max-width:1439px){
+    #intro{
+        .modal.open{
+            width:35%;
+            .modal-content{
+                .carousel{
+                    .slide-3{
+                        .get-started{
+                            margin-top: -5px !important;
+                        }
+                    }
+                }
+            }
+            
+        }
+    }
+}
+@media(max-width:768px){
+    #intro{
+        .modal.open{
+            height:60%;
+        }
+    }
+}
+
+@media(max-width:540px){
+    #intro{
+        .modal{
+            width:80%;
+            height: 100% !important;
+            max-height: 70%;
+        
+            .modal-content{
+                .carousel.carousel-slider{
+                
+                    .carousel-item{
+                        .intro-step-title{
+                            font-size: 1.25rem !important;
+                        }
+                        &.slide-3{
+                            
+                        ul.feature-list{
+                            margin: 0;
+                        }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(width:375px) and (height: 667px){
+    #intro{
+        .modal{
+            .modal-content{
+                .carousel.carousel-slider{
+                    .carousel-item{
+                        img.responsive-img{
+                            width: 100px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+

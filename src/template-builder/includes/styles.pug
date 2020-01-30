@@ -1,0 +1,17 @@
+// BEGIN: VENDOR CSS
+link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/vendors.min.css')
+block vendorcss
+// END: VENDOR CSS
+
+//- BEGIN THEME  CSS
+if (useDirection == 'rtl')
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/css'+rtl+'/style-rtl.css')
+//-END THEME  CSS
+
+// BEGIN: Page Level CSS
+block pagecss
+// END: Page Level CSS
+
+// BEGIN: Custom CSS
+link(rel='stylesheet', type='text/css', href=app_assets_path + '/css'+rtl+'/custom/custom.css')
+// END: Custom CSS

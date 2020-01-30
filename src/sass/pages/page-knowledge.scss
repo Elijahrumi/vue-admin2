@@ -1,0 +1,128 @@
+/*----------------------------------------
+    Page knowledge
+------------------------------------------*/
+
+@import 'variables.scss';
+
+#knowledge{
+	.knowledge-content{
+		.card-hover{
+			:hover{
+				i{
+					text-shadow: 2px 2px 6px #b0bec5;
+				    padding-left: 0.5rem;
+				    transition: 0.3s ease-in-out;
+			    }
+		    }
+		    i{
+	    		font-size: 3rem;
+          transition: 0.3s ease-in-out;
+	    	}
+	    }
+    	.card-content-link{
+        i{
+          vertical-align: middle;
+        }
+    		p{
+    			a{
+    				color: $black;
+				}
+				:hover{
+					text-decoration: underline;
+				}
+    		}
+    	}
+	}
+	.search-image{
+	    background-image: url("../../images/gallery/faq-search.jpg");
+	    background-repeat: no-repeat;
+	    background-size: cover;
+	}
+	.text-shadow{
+	    text-shadow: 4px 4px 3px #ee462e30 !important;
+	}
+	.search-box{
+        box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -7px rgba(0, 0, 0, 0.2);
+        padding-left: 1rem;
+    	border-radius: 3rem;
+        width: 95%;
+	}
+	.card-border-gray{
+	    border: 1px solid color("blue-grey", "lighten-5");
+	}
+	.background-transparent{
+	    background-color: transparent !important;
+	}
+	.card-hover :hover {
+	    background-color: color("blue-grey", "lighten-5");
+	}
+	.p-35{
+		padding:35px;
+	}
+}
+
+
+/*----------------------------------------
+    Page knowledge Licensing
+------------------------------------------*/
+
+.page-header-dark{
+	#knowledge-licensing, #knowledge-licensing-detail{
+		.sidebar-title{
+			h4, h6{
+				color: $white;
+				margin-top: 0.3rem;
+			}
+		}
+	}
+}
+
+#knowledge-licensing{
+	.licenses{		
+		p{
+			a{
+		    	color: $black;
+	    	}
+	    	:hover{
+				text-decoration: underline !important;
+			}
+		}
+		i{
+    	    vertical-align: bottom;
+			margin-right: 0.5rem;
+	    }
+	}
+}
+
+// Media Query
+
+@media only screen and (max-width: 1024px){
+	#knowledge-licensing{
+		.licenses{
+			.card-width{
+				width: 100%;
+			}
+		}
+	}
+}
+
+/*----------------------------------------
+    Page knowledge Licensing Detail
+------------------------------------------*/
+
+#knowledge-licensing-detail{
+	.licenses-link{
+		.licenses-list{
+			cursor: pointer;
+			li{
+				padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+			}
+			.active{
+			    padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+			    background-color: color("purple", "lighten-1");
+			    border-radius: 0.4rem;
+			    color: white;
+			}
+		}
+	}
+}

@@ -1,0 +1,51 @@
+//- =========================================================================================
+	File Name: page-user list.pug
+	Description:Users List page
+	----------------------------------------------------------------------------------------
+	Item Name: Materialize - Material Design Admin Template
+	Version: 5.0
+	Author: PixInvent
+	Author URL: https://pixinvent.com/
+	==========================================================================================
+
+
+extends template
+
+block pageVars
+	- var pageTitle = "Users List"
+	- var pageSubTitle = ""
+	- var activeParentMenu = "user"
+	- var activeMenu = "users-list"
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"}, {url:"#",name:"User"}, {name:"Users List"}])
+
+//- Include page content in page block
+append content
+	include ../contents/page-users-list.html
+	include ../contents/sidebar/right-sidebar.html
+	include ../contents/sidebar/fab-menu.html
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(src=app_assets_path + '/vendors/data-tables/js/jquery.dataTables.min.js')
+	script(src=app_assets_path + '/vendors/data-tables/extensions/responsive/js/dataTables.responsive.min.js')
+
+//- Vendor css
+//- Add vendor specific CSS
+append vendorcss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/data-tables/css/jquery.dataTables.min.css')
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/data-tables/extensions/responsive/css/responsive.dataTables.min.css')
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	script(src=app_assets_path + '/js/scripts/page-users.js')
+
+//- Page CSS
+//------------------------------
+//- Add custom page specific CSS
+append pagecss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/css'+rtl+'/pages/page-users.css')

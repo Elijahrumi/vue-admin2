@@ -1,0 +1,52 @@
+/*----------------------------------------
+Form Wizard
+------------------------------------------*/
+
+
+ul {
+    &.stepper {
+        .step {
+            .step-content {
+                .step-actions {
+                    justify-content: flex-end;
+                    flex-direction: row;
+
+                    .btn {
+                        display: inline-flex;
+                    }
+                }
+            }
+        }
+
+
+        &.horizontal {
+            .step {
+                .step-content {
+                    .step-actions {
+                        justify-content: flex-start;
+                        flex-direction: row-reverse;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .section-form-wizard {
+        ul.stepper {
+            .step {
+                .step-content {
+                    .row {
+                        .input-field {
+
+                            label {
+                                line-height: 1;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

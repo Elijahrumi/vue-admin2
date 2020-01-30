@@ -1,0 +1,32 @@
+/*----------------------------------------
+  CSS Media
+------------------------------------------*/
+
+// Circular Image
+
+#view-circular {
+   .row.valign-wrapper {
+      img {
+         max-width: 3rem;
+      }
+   }
+}
+
+// Iframe
+
+#view-videos,
+.video-two {
+   .video-container {
+      iframe {
+         border: none;
+      }
+   }
+}
+
+// Responsive Videos
+
+#responsive-videos {
+   video {
+      width: 100%;
+   }
+}

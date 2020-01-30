@@ -1,0 +1,185 @@
+/*----------------------------------------
+        Data Tables
+------------------------------------------*/
+
+@import 'variables.scss';
+
+// For Styling Of DataTables
+
+#main {
+    .section-data-tables {
+        
+        table{
+            width: 100%;
+        }
+        
+        .dataTables_wrapper {
+            table {
+                &.dataTable {
+                    thead {
+                        th {
+                            min-width: 69px;
+                            color: color('grey', 'darken-2');
+
+                            &.background-image-none {
+                                background-image: none !important;
+                            }
+
+                            &.select-all {
+                                background-image: none !important;
+                            }
+                        }
+                    }
+
+                    th,
+                    td {
+                        padding: 17px 14px;
+                        border-bottom: 1px solid color("blue-grey", lighten-4);
+                        font-weight: 300;
+                        white-space: nowrap;
+                    }
+
+                    tbody {
+                        height: 300px;
+                        max-width: 100%;
+                        overflow: auto;
+
+                        th,
+                        td {
+                            padding: 8px 14px;
+                            border: none !important;
+                            white-space: nowrap;
+                        }
+
+                        // For Toggler
+
+                        tr{
+                            td,th{
+                                &:before{
+                                    top: 10px;
+                                    left: -3px;
+                                    font-size: 0.9rem;
+                                    height: 12px;
+                                    width: 12px;
+                                    text-indent: 0;
+                                    line-height: 14px;
+                                }
+                            }
+                        }
+                    }
+
+                    tfoot {
+
+                        th,
+                        td {
+                            border-top: 1px solid color("blue-grey", lighten-4);
+                            font-weight: 300;
+                            white-space: nowrap;
+                        }
+                    }
+
+                    &.stripe,
+                    &.display {
+                        tbody {
+                            tr{
+                                height: auto;
+                                .odd {
+                                    background-color: #F4F5F7;
+
+                                    &>.sorting_1 {
+                                        background-color: transparent;
+                                    }
+
+                                    &.selected {
+                                        background-color: #acbad4 !important;
+
+                                        th {
+                                            border-radius: 0;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &.display,
+                    &.order-column.hover {
+                        tbody {
+
+                            tr.hover,
+                            tr:hover {
+                                &>.sorting_1 {
+                                    background-color: transparent;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                [type="checkbox"]+span:not(.lever):before,
+                [type="checkbox"]:not(.filled-in)+span:not(.lever):after {
+                    border-radius: 4px !important;
+                    opacity: 0.5;
+                }
+            }
+
+            .dataTables_length#page-length-option_length,
+            .dataTables_filter#page-length-option_filter {
+                display: block;
+
+                label {
+                    select {
+                        display: inline-block;
+                        width: auto;
+                        height: auto;
+                    }
+
+                    input {
+                        height: auto;
+                        width: auto;
+                    }
+                }
+            }
+
+            .dataTables_length,
+            .dataTables_filter {
+                display: none;
+            }
+
+            .dataTables_info {
+                margin-left: 18px;
+                color: color('grey', 'darken-2');
+            }
+
+            .dataTables_paginate,#page-length-option_paginate {
+                margin-bottom: 0.75rem;
+                margin-right: 0.35rem;
+
+                .paginate_button {
+                    padding: 0.25em 0.65em;
+                    margin-top: 0.25rem;
+
+                    &.current,
+                    &.current:hover {
+                        background: $primary-color;
+                        border: 1px solid $primary-color;
+                        color: $white !important;
+                        border-radius: 6px;
+                        box-shadow: 0px 0px 8px 0px $primary-color;
+                    }
+
+                    &:hover {
+                        background: $primary-color;
+                        border: 1px solid $primary-color;
+                        color: $white !important;
+                        border-radius: 6px;
+                        box-shadow: 0px 0px 8px 0px $primary-color;
+                    }
+
+                }
+            }
+        }
+
+
+    }
+}

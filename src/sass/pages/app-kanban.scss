@@ -1,0 +1,280 @@
+@import 'variables.scss';
+  #kanban-wrapper{
+    position: relative;
+    // kanban add button
+    .add-kanban-btn{
+     margin-top: 51px;
+     margin-bottom: 2rem;
+    }
+    // kanban container
+    .kanban-container{
+      margin-top: 1rem;
+      width: 100% !important;
+      .kanban-board{
+        margin: 0 1.8rem 1rem 0 !important;
+        border-radius: 4px;
+        padding-bottom: 1rem;
+        .kanban-title-button{
+          width: 120px;
+          height: 20px;
+          line-height: 15px;
+          color: $title-font-color;
+          padding: 0;
+          position: absolute;
+          text-align: center;
+          bottom: 8px;
+          display: block;
+          font-weight: 700;
+          font-size: 0.75rem;
+          background-color: transparent;
+          box-shadow: none;
+        }
+        .kanban-title-board{
+          color: white;
+          width: 200px;
+          display: inline-block;
+          padding:0 0.5rem;
+          &:hover,
+          &:focus{
+            background-color: #ffffff5e;
+            color: white;
+            border-radius: 0.267rem;
+            outline: none;
+            text-overflow: clip;
+          }
+        }
+        .line-ellipsis{
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+        .dropdown{
+          float:right;
+        }
+        .kanban-drag{
+          .kanban-item{
+            border-radius: 4px;
+            overflow: hidden;
+            .kanban-footer{
+              .kanban-footer-left{
+                  float: left;
+                  display: flex;
+                  flex-basis: 50%;
+                  .kanban-comment,
+                  .kanban-attachment{
+                    align-items: center;
+                    i{
+                      margin:0 .5rem;
+                      position: relative;
+                      top: 2px;
+                    }
+                    .font-size-small{
+                      font-size: .9rem;
+                    }
+                  }
+                }
+                .kanban-footer-right{
+                    float: right;
+                    display: flex;
+                    flex-basis: 50%;
+                    .kanban-badge{
+                      padding: 5px;
+                      font-size: 10px;
+                      font-weight: 700;
+                    }
+                }
+                .kanban-due-date{
+                  font-size: 12px;
+                  padding:.2rem 1rem;
+                  border-radius: 2px;
+                  font-weight: 700;
+               } 
+            }
+          }
+        }
+      }
+    }
+    // default border of kanban item
+    .kanban-item{
+      position: relative;
+      &::before{
+        content: "";
+        width: 100%;
+        height: 3px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        border-radius: 0.5rem;
+        background-color: color("teal","base");
+      }
+    }
+    // kanban item's border on specific data border
+    .kanban-item[data-border="light-blue"]{
+      &::before{
+        background-color:color("blue", "base") ;
+      }
+    }
+    .kanban-item[data-border="red"]{
+      &::before{
+        background-color:color("red","base");
+      }
+    }
+    .kanban-item[data-border="green"]{
+      &::before{
+        background-color:color("green","base");
+      }
+    }
+    .kanban-item[data-border="cyan"]{
+      &::before{
+        background-color:color("cyan","base");
+      }
+    }
+    .kanban-item[data-border="orange"]{
+      &::before{
+        background-color:color("orange","base");
+      }
+    }
+    .kanban-item[data-border="blue-grey"]{
+      &::before{
+        background-color:color("blue-grey", "base");
+      }
+    }
+    // kanban board backcolor
+    .kanban-board{
+      .kanban-board-header{
+        background-color:color("cyan","base");
+        border-radius: 4px 4px 0 0;
+        overflow: hidden;
+      } 
+    }
+  }
+  .kanban-overlay{
+    /* kanban overlay */
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      position: absolute;
+      z-index: 999;
+      visibility: hidden;
+      opacity: 0;
+      &.show{
+        visibility: visible;
+        transition: all .3s ease;
+        opacity: 1;
+        background-color: rgba(#000, 0.2);
+      }
+    }
+  .kanban-sidebar{
+  /* kanban sidebar */
+    box-shadow: -8px 0 18px 0 rgba(25,42,70,0.13);
+    width: 23.8rem;
+    background-color: white;
+    position: fixed;
+    transform: translateX(110%);
+    transition: all .3s ease;
+    z-index: 1003;
+    right: 2rem;
+    left: auto;
+    bottom: 0;
+    top: -1px;
+    opacity: 0;
+    // kanban-sidebar - display
+    &.show{
+      opacity: 1;
+      transform: translateX(9%) translateY(1px);
+    }
+      // Close Icon
+      .card{
+        box-shadow: none;
+        .card-header{
+          justify-content: space-between;
+          align-items: center;
+          .close-icon{
+            cursor: pointer;
+            i{
+              font-size: 1.2rem;
+            }
+            &:focus{
+              outline: none;
+            }
+          }
+        }
+      }
+    // Edit kanban sidebar Items
+    .edit-kanban-item{
+      // Custom-file label background
+      .file-field{
+        display: flex;
+        align-items: center;
+        .btn-file{
+          height: 2rem;
+          line-height: 2rem;
+        }
+      }
+      // select options
+      select{
+        option{
+          font-weight: 700;
+          height: 32px;
+          width: 50px
+        }
+      }
+    }
+    // quill editor
+    .quill-wrapper{
+      .snow-container{
+        border: 1px solid color("grey","lighten-2");
+        border-radius: 4px;
+        padding: 1rem;
+        .ql-snow, .ql-toolbar{
+          border: none;
+        }
+        .ql-toolbar{
+          .btn{
+            width: auto;
+            line-height: 0.9;
+            padding: 0.467rem 1rem;
+            font-size: .8rem;
+            color: white;
+            margin-left: .8rem;
+            &:hover{
+              color: White;
+            }
+          }
+        }
+        // Ql-link set width
+        .ql-tooltip{
+          left: 0 !important;
+          input[type=text]{
+            width: 100px;
+          }
+        }
+      }
+      // placeholder position
+      .ql-editor.ql-blank::before{
+        left: 0.3rem;
+      }
+      .ql-editor{
+        min-height: 7.93rem;
+        padding: 0;
+      }
+    }
+  }
+// Sidebar Width in xs screen
+@media (max-width: 420px){
+  .kanban-sidebar{
+    width: 19rem !important;
+    right: 1.6rem !important;
+    .quill-wrapper{
+      .snow-container{
+        // Ql-link set width
+        .ql-tooltip{
+          input[type=text]{
+            width: 70px;
+          }
+        }
+      }
+    }
+  }
+}  

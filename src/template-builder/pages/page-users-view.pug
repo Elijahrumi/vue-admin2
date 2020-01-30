@@ -1,0 +1,49 @@
+//- =========================================================================================
+	File Name: page-user view.pug
+	Description: Users View page
+	----------------------------------------------------------------------------------------
+	Item Name: Materialize - Material Design Admin Template
+	Version: 5.0
+	Author: PixInvent
+	Author URL: https://pixinvent.com/
+	==========================================================================================
+
+
+extends template
+
+block pageVars
+	- var pageTitle = "Users View"
+	- var pageSubTitle = ""
+	- var activeParentMenu = "user"
+	- var activeMenu = "users-view"
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"}, {url:"#",name:"User"}, {name:"Users View"}])
+
+//- Include page content in page block
+append content
+	include ../contents/page-users-view.html
+	include ../contents/sidebar/right-sidebar.html
+	include ../contents/sidebar/fab-menu.html
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+
+
+//- Vendor css
+//- Add vendor specific CSS
+append vendorcss
+	
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	script(src=app_assets_path + '/js/scripts/page-users.js')
+
+//- Page CSS
+//------------------------------
+//- Add custom page specific CSS
+append pagecss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/css'+rtl+'/pages/page-users.css') 

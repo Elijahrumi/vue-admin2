@@ -1,0 +1,51 @@
+//- =========================================================================================
+	File Name: dashboard-analytics.pug
+	Description: Analytics Dashboard
+	----------------------------------------------------------------------------------------
+	Item Name: Materialize - Material Design Admin Template
+	Version: 5.0
+	Author: PixInvent
+	Author URL: https://pixinvent.com/
+	========================================================================================== 
+
+extends template
+
+block pageVars
+	- var pageTitle   = "Dashboard Analytics"
+	- var activeMenu  = "dashboard-analytics"
+	- var activeParentMenu = "dashboard"
+
+block page-header
+
+//- Include page content in page block
+append content
+	include ../contents/dashboard-analytics.html
+	include ../contents/sidebar/right-sidebar.html
+
+block footer
+	include ../templates/sections/footer/dashboard-analytics-footer
+
+//- Vendor CSS
+//------------------------------
+//- Add Vendor specific CSS
+append vendorcss
+
+//- Page CSS
+//------------------------------
+//- Add custom page specific CSS
+append pagecss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/css'+rtl+'/pages/dashboard.css')
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(src=app_assets_path + '/vendors/sparkline/jquery.sparkline.min.js')
+	script(src=app_assets_path + '/vendors/chartjs/chart.min.js')
+	
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	//- Dashboard custom js
+	script(src=app_assets_path + '/js/scripts/dashboard-analytics.js')

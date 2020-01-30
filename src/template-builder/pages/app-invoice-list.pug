@@ -1,0 +1,60 @@
+//- =========================================================================================
+	File Name: app-invoice-list.pug
+	Description: App invoice
+	----------------------------------------------------------------------------------------
+	Item Name: Materialize - Material Design Admin Template
+	Version: 1.0
+	Author: PixInvent
+	Author URL: https://pixinvent.com/
+	=========================================================================================
+
+
+extends template
+
+block pageVars
+	- var pageTitle = "App Invoice-List"
+	- var pageSubTitle = ""
+	- var activeParentMenu = "app-invoice"
+	- var activeMenu = "app-invoice-list"
+
+append pageConfig
+	- var bodyCustom = 'app-page'
+
+append footerConfig
+	//- // - var footerType = 'footer-fixed'
+
+append header
+	- var contentBreadcrumbs = false
+	- var contentHeader = true
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"}, {url:"#",name:"Apps"}, {name:"App Invoice-list"}])
+
+//- Include page content in page block
+append content
+	include ../contents/app-invoice-list.html
+	include ../contents/sidebar/right-sidebar.html
+
+//- Vendor css
+//- Add vendor specific CSS
+append vendorcss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/data-tables/css/jquery.dataTables.min.css')
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/data-tables/extensions/responsive/css/responsive.dataTables.min.css')
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/data-tables/css/dataTables.checkboxes.css')
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(src=app_assets_path + '/vendors/data-tables/js/jquery.dataTables.min.js')
+	script(src=app_assets_path + '/vendors/data-tables/extensions/responsive/js/dataTables.responsive.min.js')
+	script(src=app_assets_path + '/vendors/data-tables/js/datatables.checkboxes.min.js')
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	script(src=app_assets_path + '/js/scripts/app-invoice.js')
+
+//- Page css
+//- Add page specific CSS
+append pagecss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/css/pages/app-invoice.css')

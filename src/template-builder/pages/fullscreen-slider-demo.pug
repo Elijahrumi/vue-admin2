@@ -1,0 +1,44 @@
+//- =========================================================================================
+	File Name: advance-ui-modals.pug
+	Description: Modals
+	----------------------------------------------------------------------------------------
+	Item Name: Materialize - Material Design Admin Template
+	Version: 5.0
+	Author: PixInvent
+	Author URL: https://pixinvent.com/
+	==========================================================================================
+
+
+extends template
+
+block pageVars
+	- var pageTitle = "Fullscreen Slider"
+	- var pageSubTitle = ""
+	- var description = "The standard font Material Design uses is Roboto. We have included the font files with our framework.."
+	- var activeParentMenu = "advance-ui"
+
+append pageConfig
+	- var contentLayout = '1-column'
+	- var blankPage = true //- OPTIONS: true, false
+	- var navbarFixed = false //- OPTIONS:- true, false
+	- var bodyCustom = 'bg-full-screen-image' // You can change the bg image from content.scss
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"}, {url:"#",name:"Advance UI"}, {name:"Media"}])
+
+//- Include page content in page block
+append content
+	include ../contents/fullscreen-slider-demo.html
+	include ../contents/sidebar/right-sidebar.html
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	script(src=app_assets_path + '/js/scripts/fullscreen-slider.js')

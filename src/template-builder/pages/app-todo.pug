@@ -1,0 +1,64 @@
+//- =========================================================================================
+	File Name: app-todo.pug
+	Description: App ToDo
+	----------------------------------------------------------------------------------------
+	Item Name: Materialize - Material Design Admin Template
+	Version: 1.0
+	Author: PixInvent
+	Author URL: https://pixinvent.com/
+	=========================================================================================
+
+
+extends template
+
+block pageVars
+	- var pageTitle = "App ToDo"
+	- var pageSubTitle = ""
+	- var description = "The standard font Material Design uses is Roboto. We have included the font files with our framework.."
+	- var activeParentMenu = "app-todo"
+	- var activeMenu = "app-todo"
+
+append pageConfig
+	- var bodyCustom = 'app-page'
+
+append footerConfig
+	//- // - var footerType = 'footer-fixed'
+
+append header
+	- var contentBreadcrumbs = false
+	- var contentHeader = true
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"}, {url:"#",name:"Apps"}, {name:"App ToDo"}])
+
+//- Include page content in page block
+append content
+	include ../contents/app-todo.html
+	include ../contents/sidebar/right-sidebar.html
+
+//- Vendor css
+//- Add vendor specific CSS
+append vendorcss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/flag-icon/css/flag-icon.min.css')
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/quill/quill.snow.css')
+	link(rel ='stylesheet' href=app_assets_path + '/vendors/select2/select2.min.css', type='text/css')
+	link(rel ='stylesheet' href=app_assets_path + '/vendors/select2/select2-materialize.css', type='text/css')
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(src=app_assets_path + '/vendors/sortable/jquery-sortable-min.js')
+	script(src=app_assets_path + '/vendors/quill/quill.min.js')
+	script(src=app_assets_path + '/vendors/select2/select2.full.min.js')
+	
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	script(src=app_assets_path + '/js/scripts/app-todo.js')
+
+//- Page css
+//- Add page specific CSS
+append pagecss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/css/pages/app-sidebar.css')
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/css/pages/app-todo.css')

@@ -1,0 +1,45 @@
+//- =========================================================================================
+	File Name: form-elements.pug
+	Description: Form Elements
+	----------------------------------------------------------------------------------------
+	Item Name: Materialize - Material Design Admin Template
+	Version: 5.0
+	Author: PixInvent
+	Author URL: https://pixinvent.com/
+	==========================================================================================
+
+
+extends template
+
+block pageVars
+	- var pageTitle = "Form Elements"
+	- var pageSubTitle = ""
+	- var description = "The standard font Material Design uses is Roboto. We have included the font files with our framework."
+	- var activeParentMenu = "form"
+	- var activeMenu = "form-elements"
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"}, {url:"#",name:"From"}, {name:"Form Elements"}])
+
+//- Include page content in page block
+append content
+	include ../contents/form-elements.html
+	include ../contents/sidebar/right-sidebar.html
+	include ../contents/sidebar/fab-menu.html
+
+//- Vendor css
+//- Add vendor specific CSS
+append vendorcss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/flag-icon/css/flag-icon.min.css')
+	link(rel ='stylesheet' href=app_assets_path + '/vendors/noUiSlider/nouislider.min.css', type='text/css')
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(src=app_assets_path + '/vendors/noUiSlider/nouislider.js')
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	script(src=app_assets_path + '/js/scripts/form-elements.js')

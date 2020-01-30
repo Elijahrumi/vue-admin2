@@ -1,0 +1,52 @@
+/*----------------------------------------
+  Calendar App
+------------------------------------------*/
+@import 'variables.scss';
+
+.fc {
+    .fc-event {
+        background: $primary-color;
+        color: $white;
+        border: none;
+        padding: 4px 7px;
+    }
+
+    .fc-button {
+        background: $secondary-color !important;
+        color: $white !important;
+        text-shadow: none;
+        border-radius: 2px;
+        border-color: $secondary-color !important;
+        height: auto;
+        padding: 10px;
+    }
+
+    .fc-button-primary:not(:disabled).fc-button-active:focus,
+    .fc-button-primary:not(:disabled):active:focus,
+    .fc-button-primary:focus {
+        box-shadow: none;
+    }
+
+    .fc-content-skeleton {
+        tr {
+            border-bottom: none;
+        }
+    }
+
+    td.fc-day {
+        border-width: 1px !important;
+    }
+}
+
+.fc-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@media (max-width:900px) {
+
+    .fc-left,
+    .fc-center {
+        margin-bottom: .5rem;
+    }
+}

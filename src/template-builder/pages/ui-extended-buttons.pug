@@ -1,0 +1,38 @@
+//- =========================================================================================
+	File Name: ui-extended-buttons.pug
+	Description: Buttons
+	----------------------------------------------------------------------------------------
+	Item Name: Materialize - Material Design Admin Template
+	Version: 5.0
+	Author: PixInvent
+	Author URL: https://pixinvent.com/
+	==========================================================================================
+
+
+extends template
+
+block pageVars
+	- var pageTitle = "Buttons"
+	- var pageSubTitle = ""
+	- var description = "The standard font Material Design uses is Roboto. We have included the font files with our framework.."
+	- var activeParentMenu = "basic-ui"
+	- var activeMenu = "ui-extended-buttons"
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"}, {url:"#",name:"CSS"}, {name:"Buttons"}])
+
+//- Include page content in page block
+append content
+	include ../contents/ui-extended-buttons.html
+	include ../contents/sidebar/right-sidebar.html
+	include ../contents/sidebar/fab-menu.html
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs

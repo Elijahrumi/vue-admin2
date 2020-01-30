@@ -1,0 +1,238 @@
+- var sk_path = "../../../starter-kit/"+ useDirection +"/"+ useLayout +"/"
+- var query_string = "?lng=en"
+
+// BEGIN: SideNav
+//- main menu
+aside.sidenav-main.nav-expanded.nav-lock.nav-collapsible(class= menuType)
+  //- main menu header
+  //- include includes/menu-header
+  //- / main menu header
+
+  //- main menu content
+  .brand-sidebar(class= menuColor)
+  
+  +verticalMenu([
+    
+    {url:"Javascript:void(0)",i18n:"Dashboard", name:"Dashboard", class:"collapsible-header waves-effect waves-cyan",slug:"dashboard",icon:"settings_input_svideo",tag:"3" , tagcustom: "badge pill red float-right mr-10",
+      submenu:[
+        {url:"dashboard-modern.html", i18n:"Modern", name:"Modern", slug:"dashboard-modern"},
+        {url:"dashboard-ecommerce.html", i18n:"eCommerce", name:"eCommerce", slug:"dashboard-ecommerce"},
+        {url:"dashboard-analytics.html", i18n:"Analytics", name:"Analytics", slug:"dashboard-analytics"},
+      ]
+    },
+    {url:"Javascript:void(0)",i18n:"Templates", name:"Templates", class:"collapsible-header waves-effect waves-cyan",slug:"dashboard",icon:"dvr",
+      submenu:[
+
+         {url:"Javascript:void(0)", class:"collapsible-header waves-effect waves-cyan" ,i18n:"Vertical", name:"Vertical",slug:"",
+          submenu:[
+            {url:"../vertical-modern-menu-template/", i18n:"Modern Menu", name:"Modern Menu", slug:"vertical-modern-menu-template"},
+            {url:"../vertical-menu-nav-dark-template/", i18n:"Navbar Dark", name:"Navbar Dark", slug:"vertical-menu-nav-dark-template"},
+            {url:"../vertical-gradient-menu-template/", i18n:"Gradient Menu", name:"Gradient Menu", slug:"vertical-gradient-menu-template"},
+            {url:"../vertical-dark-menu-template/", i18n:"Dark Menu", name:"Dark Menu", slug:"vertical-gradient-menu-template"},
+          ]
+        },
+        {url:"Javascript:void(0)", class:"collapsible-header waves-effect waves-cyan" ,i18n:"Horizontal", name:"Horizontal",slug:"",
+          submenu:[
+            {url:"../horizontal-menu-template/", i18n:"Horizontal Menu", name:"Horizontal Menu", slug:"horizontal-classic-menu-template"},
+          ]
+        },
+      ]
+    },
+
+    {navheader:"Applications",icon:"remove"},
+
+    {url:"app-email.html" ,i18n:"Mail", name:"Mail", class:"waves-effect waves-cyan" ,icon:"mail_outline",slug:"app-email"},
+    {url:"app-chat.html" ,i18n:"Chat", name:"Chat", class:"waves-effect waves-cyan" ,icon:"chat_bubble_outline",slug:"app-chat"},
+    {url:"app-todo.html" ,i18n:"ToDo", name:"ToDo", class:"waves-effect waves-cyan" ,icon:"check",slug:"app-todo"},
+    {url:"app-contacts.html" ,i18n:"Contacts", name:"Contacts", class:"waves-effect waves-cyan" ,icon:"import_contacts",slug:"app-contacts"},
+    {url:"app-calendar.html" ,i18n:"Calendar", name:"Calendar", class:"waves-effect waves-cyan" ,icon:"today",slug:"app-calendar"},
+    {url:"app-kanban.html" ,name:"Kanban", i18n:"Kanban", class:"waves-effect waves-cyan" ,icon:"format_list_bulleted",slug:"app-kanban"},
+    {url:"app-file-manager.html" ,name:"File manager", i18n:"File Manager", class:"waves-effect waves-cyan" ,icon:"content_paste",slug:"app-file-manager"},
+     {url:"Javascript:void(0)",name:"Invoice", i18n:"Invoice", class:"collapsible-header waves-effect waves-cyan",slug:"app-invoice",icon:"receipt",
+      submenu:[
+        {url:"app-invoice-list.html", name:"Invoice List", i18n:"Invoice List", slug:"app-invoice-list"},
+        {url:"app-invoice-view.html", name:"Invoice View", i18n:"Invoice View", slug:"app-invoice-view"},
+        {url:"app-invoice-edit.html", name:"Invoice Edit", i18n:"Invoice Edit", slug:"app-invoice-edit"},
+        {url:"app-invoice-add.html", name:"Invoice Add", i18n:"Invoice Add", slug:"app-invoice-add"},
+      ]
+    },
+      {url:"Javascript:void(0)",i18n:"eCommerce", name:"eCommerce", class:"collapsible-header waves-effect waves-cyan",slug:"eCommerce",icon:"add_shopping_cart",
+      submenu:[
+        {url:"eCommerce-products-page.html", i18n:"Products Page", name:"Products Page", slug:"eCommerce-products-page"},
+        {url:"eCommerce-pricing.html", i18n:"Pricing", name:"Pricing", slug:"eCommerce-pricing"},
+      ]
+    },
+
+    {navheader:"Pages ",icon:"remove"},
+    {url:"user-profile-page.html", name:"User Profile", i18n:"User Profile", class:"waves-effect waves-cyan", icon:"person_outline", slug:"user-profile-page"},
+    {url:"Javascript:void(0)",i18n:"Pages", name:"Pages", class:"collapsible-header waves-effect waves-cyan",slug:"pages",icon:"content_paste",
+      submenu:[
+        {url:"page-contact.html", i18n:"Contact", name:"Contact", slug:"page-contact"},
+        {url:"page-blog-list.html", i18n:"Blog", name:"Blog", slug:"page-blog-list"},
+        {url:"page-search.html", i18n:"Search", name:"Search", slug:"page-search"},
+        {url:"page-knowledge.html", i18n:"Knowledge", name:"Knowledge", slug:"page-knowledge"},
+        {url:"page-timeline.html", name:"Timeline", i18n:"Timeline", slug:"page-timeline"},
+        {url:"page-account-settings.html", name:"Account Settings", i18n:"Account Settings", slug:"page-account-settings"},
+        {url:"page-faq.html", i18n:"FAQs", name:"FAQs", slug:"page-faq"},
+        {url:"page-blank.html", i18n:"Page Blank", name:"Page Blank", slug:"page-blank"},
+      ]
+    },
+     {url:"Javascript:void(0)",i18n:"Medias", name:"Medias", class:"collapsible-header waves-effect waves-cyan",slug:"medias",icon:"crop_original",
+      submenu:[
+        {url:"media-gallery-page.html", i18n:"Gallery Page", name:"Gallery Page", slug:"media-gallery-page"},
+        {url:"media-hover-effects.html", i18n:"Media Hover Effects", name:"Media Hover Effects", slug:"media-hover-effects"},
+      ]
+    },
+    {url:"Javascript:void(0)",name:"User", i18n:"User", class:"collapsible-header waves-effect waves-cyan",slug:"user",icon:"face",tag:"" , tagcustom: "badge pill purple float-right mr-10",
+      submenu:[
+        {url:"page-users-list.html", name:"List", i18n:"List", slug:"users-list"},
+        {url:"page-users-view.html", name:"View", i18n:"View", slug:"users-view"},
+        {url:"page-users-edit.html", name:"Edit", i18n:"Edit", slug:"users-edit"},
+      ]
+    },
+    {url:"Javascript:void(0)",name:"Authentication", i18n:"Authentication", class:"collapsible-header waves-effect waves-cyan",slug:"authentication",icon:"lock_open",tag:"10" , tagcustom: "badge pill purple float-right mr-10",
+      submenu:[
+        {url:"user-login.html", name:"Login", i18n:"Login", slug:"user-login", newTab: "_blank"},
+        {url:"user-register.html", name:"Register", i18n:"Register", slug:"user-register", newTab: "_blank"},
+        {url:"user-forgot-password.html", name:"Forgot Password", i18n:"Forgot Password", slug:"user-forgot-password", newTab: "_blank"},
+        {url:"user-lock-screen.html", name:"Lock Screen", i18n:"Lock Screen", slug:"user-lock-screen", newTab: "_blank"},
+      ]
+    },    
+    {url:"Javascript:void(0)",i18n:"Misc", name:"Misc", class:"collapsible-header waves-effect waves-cyan",slug:"misc",icon:"filter_tilt_shift",
+      submenu:[
+        {url:"page-404.html", i18n:"404", name:"404", slug:"page-404", newTab: "_blank"},
+        {url:"page-maintenance.html", i18n:"Page Maintenanace", name:"Page Maintenanace", slug:"page-maintenance", newTab: "_blank"},
+        {url:"page-500.html", i18n:"500", name:"500", slug:"page-505", newTab: "_blank"},
+      ]
+    },
+
+    {navheader:"User Interface ",icon:"remove"},
+
+    {url:"Javascript:void(0)",i18n:"Cards", name:"Cards", class:"collapsible-header waves-effect waves-cyan",slug:"cards",icon:"cast",
+      submenu:[
+        {url:"cards-basic.html", i18n:"Cards", name:"Cards", slug:"cards-basic"},
+        {url:"cards-advance.html", i18n:"Cards Advance", name:"Cards Advance", slug:"cards-advance"},
+        {url:"cards-extended.html", i18n:"Cards Extended", name:"Cards Extended", slug:"cards-extended"},
+      ]
+    },
+    
+    {url:"Javascript:void(0)",i18n:"CSS", name:"CSS", class:"collapsible-header waves-effect waves-cyan",slug:"css",icon:"invert_colors",
+      submenu:[
+        {url:"css-typography.html", i18n:"Typograpy", name:"Typograpy", slug:"css-typography"},
+        {url:"css-color.html", i18n:"Color", name:"Color", slug:"css-color"},
+        {url:"css-grid.html", i18n:"Grid", name:"Grid", slug:"css-grid"},
+        {url:"css-helpers.html", i18n:"Helpers", name:"Helpers", slug:"css-helpers"},
+        {url:"css-media.html", i18n:"Media", name:"Media", slug:"css-media"},
+        {url:"css-pulse.html", i18n:"Pulse", name:"Pulse", slug:"css-pulse"},
+        {url:"css-sass.html", i18n:"Sass", name:"Sass", slug:"css-sass"},
+        {url:"css-shadow.html", i18n:"Shadow", name:"Shadow", slug:"css-shadow"},
+        {url:"css-animations.html", i18n:"Animations", name:"Animations", slug:"css-animations"},
+        {url:"css-transitions.html", i18n:"Transitions", name:"Transitions", slug:"css-transitions"},
+      ]
+    },
+
+    {url:"Javascript:void(0)",i18n:"Basic UI", name:"Basic UI", class:"collapsible-header waves-effect waves-cyan",slug:"basic-ui",icon:"photo_filter",
+      submenu:[
+        {url:"Javascript:void(0)", class:"collapsible-header waves-effect waves-cyan" ,i18n:"Buttons", name:"Buttons",slug:"",
+          submenu:[
+            {url:"ui-basic-buttons.html",i18n:"Basic", name:"Basic",slug:"ui-basic-buttons"},
+            {url:"ui-extended-buttons.html",i18n:"Extended", name:"Extended",slug:"ui-extended-buttons"},
+          ]
+        },
+        {url:"ui-icons.html", i18n:"Icons", name:"Icons", slug:"ui-icons"},
+        {url:"ui-alerts.html", i18n:"Alerts", name:"Alerts", slug:"ui-alerts"},
+        {url:"ui-badges.html", i18n:"Badges", name:"Badges", slug:"ui-badges"},
+        {url:"ui-breadcrumbs.html", i18n:"Breadcrumbs", name:"Breadcrumbs", slug:"ui-breadcrumbs"},
+        {url:"ui-chips.html", i18n:"Chips", name:"Chips", slug:"ui-chips"},
+        {url:"ui-collections.html", i18n:"Collections", name:"Collections", slug:"ui-collections"},
+        {url:"ui-navbar.html", i18n:"Navbar", name:"Navbar", slug:"ui-navbar"},
+        {url:"ui-pagination.html", i18n:"Pagination", name:"Pagination", slug:"ui-pagination"},
+        {url:"ui-preloader.html", i18n:"Preloader", name:"Preloader", slug:"ui-preloader"},
+      ]
+    },
+    {url:"Javascript:void(0)",i18n:"Advanced UI", name:"Advanced UI", class:"collapsible-header waves-effect waves-cyan",slug:"advance-ui",icon:"settings_brightness",
+      submenu:[
+        {url:"advance-ui-carousel.html", i18n:"Carousel", name:"Carousel", slug:"advance-ui-carousel"},
+        {url:"advance-ui-collapsibles.html", i18n:"Collapsibles", name:"Collapsibles", slug:"advance-ui-collapsibles"},
+        {url:"advance-ui-toasts.html", i18n:"Toasts", name:"Toasts", slug:"advance-ui-toasts"},
+        {url:"advance-ui-tooltip.html", i18n:"Tooltip", name:"Tooltip", slug:"advance-ui-tooltip"},
+        {url:"advance-ui-dropdown.html", i18n:"Dropdown", name:"Dropdown", slug:"advance-ui-dropdown"},
+        {url:"advance-ui-feature-discovery.html", i18n:"Discovery", name:"Discovery", slug:"advance-ui-feature-discovery"},
+        {url:"advance-ui-media.html", i18n:"Media", name:"Media", slug:"advance-ui-media"},
+        {url:"advance-ui-modals.html", i18n:"Modals", name:"Modals", slug:"advance-ui-modals"},
+        {url:"advance-ui-scrollspy.html", i18n:"Scrollspy", name:"Scrollspy", slug:"advance-ui-scrollspy"},
+        {url:"advance-ui-tabs.html", i18n:"Tabs", name:"Tabs", slug:"advance-ui-tabs"},
+        {url:"advance-ui-waves.html", i18n:"Waves", name:"Waves", slug:"advance-ui-waves"},
+      ]
+    },
+    {url:"Javascript:void(0)",i18n:"Extra Components", name:"Extra Components", class:"collapsible-header waves-effect waves-cyan",slug:"extra-components",icon:"add_to_queue",
+      submenu:[
+        {url:"extra-components-range-slider.html", i18n:"Range Slider", name:"Range Slider", slug:"extra-components-range-slider"},
+        {url:"extra-components-sweetalert.html", i18n:"Sweetalert", name:"Sweetalert", slug:"extra-components-sweetalert"},
+        {url:"extra-components-nestable.html", i18n:"Nestable", name:"Nestable", slug:"extra-components-nestable"},
+        {url:"extra-components-treeview.html", name:"Treeview", i18n:"Treeview", slug:"extra-components-treeview"},
+        {url:"extra-components-ratings.html", name:"Ratings", i18n:"Ratings", slug:"extra-components-ratings"},
+        {url:"extra-components-tour.html", name:"Tour", i18n:"Tour", slug:"extra-components-tour"},
+        {url:"extra-components-i18n.html", name:"i18n", i18n:"i18n", slug:"extra-components-i18n"},
+        {url:"extra-components-highlight.html", i18n:"Highlight", name:"Highlight", slug:"extra-components-highlight"},
+      ]
+    },
+    
+    {navheader:"Tables & Forms ",icon:"remove"},
+
+    {url:"table-basic.html",i18n:"Basic Tables", name:"Basic Tables", class:"waves-effect waves-cyan",icon:"border_all",slug:"table-basic"},
+    {url:"table-data-table.html",i18n:"Data Tables", name:"Data Tables", class:"waves-effect waves-cyan",icon:"border_all",slug:"table-data-table"},
+    {url:"Javascript:void(0)",i18n:"Form Elements", name:"Form Elements", class:"collapsible-header waves-effect waves-cyan",slug:"form",icon:"chrome_reader_mode",
+      submenu:[
+        {url:"form-elements.html", i18n:"Form Elements", name:"Form Elements", slug:"form-elements"},
+        {url:"form-select2.html", name:"Form Select2", i18n:"Form Select2", slug:"form-select2"},
+        {url:"form-validation.html", i18n:"Form Validation", name:"Form Validation", slug:"form-validation"},
+        {url:"form-masks.html", i18n:"Form Masks", name:"Form Masks", slug:"form-masks"},
+        {url:"form-editor.html", name:"Form Editor", i18n:"Form Editor", slug:"form-editor"},
+        {url:"form-file-uploads.html", i18n:"File Uploads", name:"File Uploads", slug:"form-file-uploads"},
+      ]
+    },
+
+    {url:"form-layouts.html",i18n:"Form Layouts", name:"Form Layouts", class:"waves-effect waves-cyan",icon:"image_aspect_ratio",slug:"form-layouts"},   
+    {url:"form-wizard.html",i18n:"Form Wizard", name:"Form Wizard", class:"waves-effect waves-cyan",icon:"settings_ethernet",slug:"form-wizard"},
+
+    {navheader:"Charts & Maps ",icon:"remove"},
+
+    {url:"Javascript:void(0)",i18n:"Chart", name:"Chart", class:"collapsible-header waves-effect waves-cyan",slug:"chart",icon:"pie_chart_outlined",
+      submenu:[
+        {url:"charts-chartjs.html", i18n:"ChartJS", name:"ChartJS", slug:"charts-chartjs"},
+        {url:"charts-chartist.html", i18n:"Chartist", name:"Chartist", slug:"charts-chartist"},
+        {url:"charts-sparklines.html", i18n:"Sparkline Charts", name:"Sparkline Charts", slug:"charts-sparklines"},
+      ]
+    },
+    
+    {navheader:"Misc ",icon:"remove"},
+    
+    {url:"Javascript:void(0)",i18n:"Menu levels", name:"Menu levels", class:"collapsible-header waves-effect waves-cyan",icon:"photo_filter",slug:"",          
+        submenu:[
+          {url:"Javascript:void(0)",i18n:"Second level", name:"Second level",slug:""},
+          {url:"Javascript:void(0)", class:"collapsible-header waves-effect waves-cyan" ,i18n:"Second level", name:"Second level child",slug:"",
+            submenu:[
+              {url:"Javascript:void(0)",i18n:"Third level", name:"Third level",slug:""}                
+            ]
+          },
+        ]
+      },
+    {url:"changelog.html" ,i18n:"Changelog", name:"Changelog", class:"waves-effect waves-cyan" ,icon:"track_changes",slug:"changelog"},
+    {url:"../https://pixinvent.com/materialize-material-design-admin-template/documentation/index.html" ,i18n:"Documentation", name:"Documentation", class:"waves-effect waves-cyan" ,icon:"import_contacts",slug:"documentation",newTab: "_blank"},
+    {url:"https://pixinvent.ticksy.com/" ,i18n:"Support", name:"Support", class:"waves-effect waves-cyan" ,icon:"help_outline",slug:"support",newTab: "_blank"},
+  ])
+  div(class="navigation-background")
+  a.sidenav-trigger.btn-floating.btn-medium.waves-effect.waves-light.hide-on-large-only(href='#', data-target='slide-out')
+    i.material-icons menu
+
+
+
+  //- /main menu content
+
+  //- main menu footer
+  //- include includes/menu-footer
+  //- main menu footer
+//- / main menu
+
+// END: SideNav

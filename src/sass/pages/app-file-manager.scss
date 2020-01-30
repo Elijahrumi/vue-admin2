@@ -1,0 +1,294 @@
+@import 'variables.scss';
+
+/* File manager application css */
+/*------------------------------*/
+.section {
+  background: $white;
+  overflow: hidden;
+  border: 1px solid color("grey", "lighten-2");
+  border-radius: 4px;
+  margin: 2rem 0;
+  padding: 0;
+  position: relative;
+
+  /* Content area overlay */
+  .app-file-overlay {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    z-index: 7;
+    visibility: hidden;
+    opacity: 0;
+    border-radius: 4px;
+
+    &.show {
+      visibility: visible;
+      transition: all 0.3s ease;
+      opacity: 1;
+      background-color: rgba(#000, 0.2);
+    }
+  }
+
+  // icons vertically middle 
+  i {
+    vertical-align: middle;
+    cursor: pointer;
+    font-size: 22px;
+  }
+
+  // app file's label for whole app
+  .app-file-label {
+    font-size: .8rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: color("grey", "lighten-1");
+    margin-left: 3px;
+  }
+
+  // sidebar toggle button of left sidebar
+  .sidebar-toggle {
+    display: none;
+    padding-top: .55rem;
+  }
+
+  /* sidebar left */
+  /*-------------*/
+  .sidebar-left {
+    float: left;
+    width: 260px;
+    padding: 1rem;
+    position: relative;
+    .app-file-sidebar {
+      .app-file-sidebar-left {
+        width: 100%;
+
+        //sidebar close button positioning 
+        .app-file-sidebar-close {
+          position: absolute;
+          right: 5px;
+          top: 2px;
+
+          i {
+            font-size: 1.3rem;
+          }
+        }
+
+        // input file element
+        .getfileInput {
+          width: 0;
+          height: 0;
+          overflow: hidden;
+        }
+
+        // collection group of action list
+        .file-manager-drive {
+          border: none;
+          margin: 1rem 0;
+
+          // collection items
+          .file-item-action {
+            padding: 10px 0;
+            border-bottom: none;
+            color: $body-font-color;
+
+            // special style when active class appear
+            &.active {
+              background: transparent;
+              color: color("indigo", "base");
+            }
+
+            // costomizing chip
+            .chip {
+              height: 22px;
+              line-height: 22px;
+              padding: 0px 8px;
+              border-radius: 50%;
+            }
+          }
+        }
+      }
+    }
+    .storage-icon{
+      position: relative;
+      top: 5px;
+    }
+  }
+  
+  /*App file sidebar info (right sidebar)*/
+  /*------------------------------------*/
+  .app-file-sidebar-info {
+    position: absolute;
+    right: 32px;
+    top: -1px;
+    z-index: 8;
+    transition: all .3s ease;
+    box-shadow: -8px 0 18px 0 rgba(25, 42, 70, .13);
+    height: 100%;
+    width: 357px;
+    border-radius: 0 .25rem .25rem 0;
+    transform: translateX(110%);
+    opacity: 0;
+
+    &.show {
+      opacity: 1;
+      transform: translateX(9%) translateY(1px);
+      background-color: #fff;
+    }
+
+    // card header
+    .card-header {
+      border-bottom: 1px solid color("grey", "lighten-2");
+      padding: 1rem 1.6rem;
+    }
+  }
+
+  /* Content right */
+  /*--------------*/
+  .content-right {
+    width: calc(100% - 260px);
+    float: right;
+
+    // app file area
+    .app-file-area {
+      border-left: 1px solid color("grey", "lighten-2");
+
+      // app file header for search
+      .app-file-header {
+        display: flex;
+        border-bottom: 1px solid color("grey", "lighten-2");
+        padding: .2rem 1rem;
+
+        // search
+        .app-file-header-search {
+          flex-grow: 1;
+
+          // search icon
+          .input-field .prefix {
+            font-size: 1.6rem;
+            top: .7rem;
+          }
+
+          // search input
+          input {
+            margin-bottom: 0;
+            margin-left: 2.5rem;
+            border-bottom: none;
+            box-shadow: none;
+          }
+        }
+
+        // delete and user icons in header
+        .app-file-header-icons {
+          .fonticon-wrap {
+            margin-left: .7rem;
+          }
+        }
+      }
+
+      // app file content
+      .app-file-content {
+        padding: 1.6rem;
+
+        .app-file-recent-access,
+        .app-file-files,
+        .app-file-folder {
+          .card {
+            border: 1px solid color("grey", "lighten-2");
+            margin-top: .5rem;
+            border-radius: 4px;
+
+            .app-file-content-logo {
+              overflow: hidden;
+              cursor: pointer;
+              border-radius: 4px;
+              margin-bottom: .5rem;
+            }
+
+            // file images 
+            .recent-file {
+              margin: 25px auto;
+              display: block;
+            }
+
+            .app-file-name,
+            .app-file-size,
+            .app-file-last-access {
+              font-size: .9rem;
+              margin-top: .3rem;
+            }
+
+            .fonticon {
+              position: absolute;
+              right: 5px;
+            }
+
+
+            .app-file-folder-name,
+            .app-file-folder-size {
+              font-size: .9rem;
+            }
+
+            .card-content {
+              padding: .5rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+// media query for medium and below
+@media (max-width:992px) {
+
+  // sidebar left
+  .sidebar-left {
+    width: 260px !important;
+    height: 100% !important;
+    position: absolute !important;
+    transform: translateX(-110%);
+    z-index: 8;
+    left: -34px;
+    transition: transform .25s;
+    background-color: #fff;
+
+    &.show {
+      transform: translateX(13%) translateY(-1px);
+    }
+  }
+
+  .content-right {
+    width: 100% !important;
+
+    .app-file-area {
+      border-left: none !important;
+    }
+  }
+}
+@media (max-width:600px){
+  .app-file-manager-wrapper{
+    .sidebar-left{
+      .app-file-sidebar{
+        .add-new-file{
+          padding-top: 1rem;
+        }
+      }
+    }
+  }
+}
+//media query for below screen
+@media(max-width:450px) {
+
+  // right sidebar
+  .app-file-sidebar-info {
+    width: 300px !important;
+
+    &.show {
+      transform: translateX(11%) translateY(1px) !important;
+    }
+  }
+}

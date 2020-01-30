@@ -1,0 +1,168 @@
+@import 'variables.scss';
+
+/* user list css */
+/*--------------*/
+// icons vertically middle
+i {
+  vertical-align: middle;
+}
+
+.users-list-wrapper {
+  .users-list-filter {
+    .show-btn {
+      // show button 
+      padding-top: 43px !important;
+    }
+  }
+
+  .users-list-table {
+    overflow: hidden;
+
+    .dataTables_filter {
+      label {
+        input {
+          height: auto;
+          width: auto;
+          margin-left: .5rem;
+        }
+      }
+    }
+
+    .dataTables_length {
+      label {
+        select {
+          display: inline-block;
+          width: auto;
+          height: auto;
+        }
+      }
+    }
+
+    .dataTable {
+      border-collapse: collapse;
+
+      th {
+        width: auto !important;
+        border-bottom: 1px solid color("grey", "lighten-2");
+        padding: 19px 15px;
+      }
+
+      tbody td {
+        padding: .8rem .8rem;
+      }
+    }
+
+    .dataTables_paginate {
+
+      /* Pagination button styling */
+      .paginate_button {
+        padding: 0.25em 0.65em;
+        margin-top: 0.25rem;
+
+        &.current,
+        &:hover {
+          border-radius: 4px;
+          background: color("indigo", "base");
+          border: 1px solid color("indigo", "base");
+          box-shadow: 0px 0px 8px 0px #3f51b5;
+          color: white !important;
+        }
+      }
+    }
+  }
+}
+
+/* user view css*/
+/*-------------*/
+.users-view {
+  .media {
+    .avatar{
+      margin-right: .6rem;
+    }
+    .users-view-name {
+      font-size: 1.47rem;
+    }
+  }
+  .quick-action-btns{
+    a{
+      margin-left: 1rem;
+    }
+  }
+  .users-view-timeline {
+    padding: 2rem;
+
+    h6 {
+      span {
+        font-size: 2rem;
+        vertical-align: middle;
+      }
+    }
+  }
+
+  .striped {
+    td:first-child {
+      /* dynamic width change of first td*/
+      width: 140px;
+    }
+  }
+}
+
+/* user edit css*/
+/*-------------*/
+.users-edit {
+  .tabs {
+    .tab {
+      a {
+        text-overflow: clip;
+
+        span {
+          position: relative;
+          top: 2px;
+        }
+
+        &.active {
+          background-color: color("indigo", "lighten-5");
+          // color: #fff;
+          border-radius: 4px;
+        }
+      }
+    }
+  }
+  .user-edit-btns{
+    a{
+      margin-right: 1rem;
+    }
+  }
+  form{
+    button[type="submit"]{
+      margin-right: 1rem;
+    }
+  }
+}
+
+@media (max-width:600px) {
+  .users-view-timeline {
+    h6 {
+      /* view timeline text center*/
+      text-align: center;
+    }
+  }
+
+  .users-view {
+    .media {
+      margin-bottom: .5rem;
+
+      .media-heading {
+        display: flex;
+
+        .users-view-name {
+          font-size: 1.2rem;
+        }
+
+        .users-view-username {
+          font-size: .8rem;
+        }
+      }
+    }
+  }
+}

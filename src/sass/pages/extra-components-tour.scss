@@ -1,0 +1,25 @@
+/*Extra components tour css*/
+/*------------------------*/
+@import 'variables.scss';
+.tour-container{
+  .shepherd-header{
+    background-color: color("indigo","lighten-5") !important;
+    .shepherd-title{
+      color: color("indigo","base");
+    }
+    //tour cancel icons
+    .shepherd-cancel-icon{
+      span{
+        font-size: 1.4rem;
+        position: absolute;
+        top: 8px;
+        right: 15px;
+        color: color("indigo","lighten-1");
+      }
+    }
+  }
+  // shepherd description text
+  .shepherd-text{
+    color: $body-font-color;
+  }
+} 

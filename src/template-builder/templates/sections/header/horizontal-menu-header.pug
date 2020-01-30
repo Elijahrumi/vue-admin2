@@ -1,0 +1,414 @@
+// BEGIN: Header
+header#header.page-topbar
+  div.navbar(class=navbarPosition, class=(navbarHideOnScroll == true ? 'navbar-hide-on-scroll' : ''), class=(navbarBorder == true ? 'navbar-border' : ''), class=(navbarBrandCenter == true ? 'navbar-brand-center' : ''), class=(boxedLayout == true ? 'container boxed-layout' : ''))  
+    nav.navbar-main.navbar-color.nav-collapsible.sideNav-lock(class=navbarColor)
+      .nav-wrapper
+        ul.left
+          li
+            h1.logo-wrapper
+              a.brand-logo.darken-1(href='index.html')
+                if (logoType == 'dark')
+                  img(src='../../../app-assets/images/logo/materialize-logo-color.png', alt='materialize logo')
+                else
+                  img(src='../../../app-assets/images/logo/materialize-logo.png', alt='materialize logo')
+                span.logo-text.hide-on-med-and-down Materialize
+        .header-search-wrapper.hide-on-med-and-down
+          i.material-icons search
+          input.header-search-input.z-depth-2(type='text', name='Search', placeholder='Explore Materialize', data-search="template-list")
+          ul.search-list.collection.display-none
+        ul.navbar-list.right
+          li.dropdown-language
+            a.waves-effect.waves-block.waves-light.translation-button(href='javascript:void(0);', data-target='translation-dropdown')
+              span.flag-icon.flag-icon-gb
+          li.hide-on-med-and-down
+            a.waves-effect.waves-block.waves-light.toggle-fullscreen(href='javascript:void(0);')
+              i.material-icons settings_overscan
+          li.hide-on-large-only
+            a.waves-effect.waves-block.waves-light.search-button(href='javascript:void(0);')
+              i.material-icons
+                | search         
+          li
+            a.waves-effect.waves-block.waves-light.notification-button(href='javascript:void(0);', data-target='notifications-dropdown')
+              i.material-icons
+                | notifications_none
+                small.notification-badge.orange.accent-3 5
+          li
+            a.waves-effect.waves-block.waves-light.profile-button(href='javascript:void(0);', data-target='profile-dropdown')
+              span.avatar-status.avatar-online
+                img(src='../../../app-assets/images/avatar/avatar-7.png', alt='avatar')
+                i
+          li
+            a.waves-effect.waves-block.waves-light.sidenav-trigger(href='#', data-target='slide-out-right')
+              i.material-icons format_indent_increase
+        // translation-button
+        ul#translation-dropdown.dropdown-content
+          li.dropdown-item
+            a.grey-text.text-darken-1(href='#!', data-language="en")
+              i.flag-icon.flag-icon-gb
+              |  English
+          li.dropdown-item
+            a.grey-text.text-darken-1(href='#!', data-language="fr")
+              i.flag-icon.flag-icon-fr
+              |  French
+          li.dropdown-item
+            a.grey-text.text-darken-1(href='#!', data-language="pt")
+              i.flag-icon.flag-icon-pt
+              |  Portuguese
+          li.dropdown-item
+            a.grey-text.text-darken-1(href='#!', data-language="de")
+              i.flag-icon.flag-icon-de
+              |  German
+        // notifications-dropdown
+        ul#notifications-dropdown.dropdown-content
+          li
+            h6
+              | NOTIFICATIONS
+              span.new.badge 5
+          li.divider
+          li
+            a.black-text(href='#!')
+              span.material-icons.icon-bg-circle.cyan.small add_shopping_cart
+              |  A new order has been placed!
+            time.media-meta.grey-text.darken-2(datetime='2015-06-12T20:50:48+08:00') 2 hours ago
+          li
+            a.black-text(href='#!')
+              span.material-icons.icon-bg-circle.red.small stars
+              |  Completed the task
+            time.media-meta.grey-text.darken-2(datetime='2015-06-12T20:50:48+08:00') 3 days ago
+          li
+            a.black-text(href='#!')
+              span.material-icons.icon-bg-circle.teal.small settings
+              |  Settings updated
+            time.media-meta.grey-text.darken-2(datetime='2015-06-12T20:50:48+08:00') 4 days ago
+          li
+            a.black-text(href='#!')
+              span.material-icons.icon-bg-circle.deep-orange.small today
+              |  Director meeting started
+            time.media-meta.grey-text.darken-2(datetime='2015-06-12T20:50:48+08:00') 6 days ago
+          li
+            a.black-text(href='#!')
+              span.material-icons.icon-bg-circle.amber.small trending_up
+              |  Generate monthly report
+            time.media-meta.grey-text.darken-2(datetime='2015-06-12T20:50:48+08:00') 1 week ago
+        // profile-dropdown
+        ul#profile-dropdown.dropdown-content
+          li
+            a.grey-text.text-darken-1(href='user-profile-page.html')
+              i.material-icons person_outline
+              |  Profile
+          li
+            a.grey-text.text-darken-1(href='app-chat.html')
+              i.material-icons chat_bubble_outline
+              |  Chat
+          li
+            a.grey-text.text-darken-1(href='page-faq.html')
+              i.material-icons help_outline
+              |  Help
+          li.divider
+          li
+            a.grey-text.text-darken-1(href='user-lock-screen.html')
+              i.material-icons lock_outline
+              |  Lock
+          li
+            a.grey-text.text-darken-1(href='user-login.html')
+              i.material-icons keyboard_tab
+              |  Logout
+      nav.display-none.search-sm
+        .nav-wrapper
+          form
+            .input-field.search-input-sm
+              input.search-box-sm(type='search', required='', id='search', data-search="template-list")
+              label.label-icon(for='search')
+                i.material-icons.search-sm-icon search
+              i.material-icons.search-sm-close close
+              ul.search-list.collection.search-list-sm.display-none
+            
+
+    // BEGIN: Horizontal nav start
+    nav#horizontal-nav.white.hide-on-med-and-down
+      .nav-wrapper
+        +horizontalMenu([
+          {url:"Javascript:void(0)", i18n:"Dashboard", name:"Dashboard",slug:"dashboard", activate:"DashboardDropdown" ,icon:"dashboard", dropdown:"1",
+            submenu:[
+               {url:"dashboard-modern.html",  i18n:"Modern", name:"Modern", slug:"dashboard-modern"},
+               {url:"dashboard-ecommerce.html",  i18n:"eCommerce", name:"eCommerce", slug:"dashboard-ecommerce"},
+               {url:"dashboard-analytics.html",  i18n:"Analytics", name:"Analytics", slug:"dashboard-analytics"},
+            ]
+          },
+
+          {url:"Javascript:void(0)", i18n:"Templates", name:"Templates", slug:"dashboard", activate:"TemplatesDropdown" ,icon:"dvr", dropdown:"1",
+            submenu:[
+                  {url:"../vertical-modern-menu-template/",  i18n:"Modern Menu", name:"Modern Menu", slug:"vertical-modern-menu-template"},
+                  {url:"../vertical-menu-nav-dark-template/",  i18n:"Navbar Dark", name:"Navbar Dark", slug:"vertical-menu-nav-dark-template"},
+                  {url:"../vertical-gradient-menu-template/",  i18n:"Gradient Menu", name:"Gradient Menu", slug:"vertical-gradient-menu-template"},
+                  {url:"../vertical-dark-menu-template/",  i18n:"Dark Menu", name:"Dark Menu", slug:"vertical-gradient-menu-template"},
+                  {url:"../horizontal-menu-template/",  i18n:"Horizontal Menu", name:"Horizontal Menu", slug:"horizontal-classic-menu-template"},
+            ]
+          },
+
+          {url:"Javascript:void(0)", i18n:"Apps", name:"Apps",slug:"apps", activate:"AppsDropdown" ,icon:"mail_outline", dropdown:"1",
+          submenu:[
+            {url:"app-email.html" , i18n:"Mail", name:"Mail", slug:"app-email"},
+            {url:"app-chat.html" , i18n:"Chat", name:"Chat", slug:"app-chat"},
+            {url:"app-todo.html" , i18n:"ToDo", name:"ToDo", slug:"app-todo"},
+            {url:"app-contacts.html" , i18n:"Contacts", name:"Contacts", slug:"app-contacts"},
+            {url:"app-calendar.html" , i18n:"Calendar", name:"Calendar", slug:"app-calendar"},
+            {url:"app-kanban.html" ,name:"Kanban", i18n:"Kanban", class:"waves-effect waves-cyan", slug:"app-kanban"},
+            {url:"app-file-manager.html" ,name:"File manager", i18n:"File Manager", class:"waves-effect waves-cyan", slug:"app-file-manager"},
+            {url:"Javascript:void(0)", name:"Invoice", i18n:"Invoice", slug:"invoice", icon:"chevron_right", activate:"invoiceDropdown", dropdown:"1",
+              submenu:[
+                {url:"app-invoice-list.html", name:"Invoice List", i18n:"Invoice List", slug:"app-invoice-list"},
+                {url:"app-invoice-view.html", name:"Invoice View", i18n:"Invoice View", slug:"app-invoice-view"},
+                {url:"app-invoice-edit.html", name:"Invoice Edit", i18n:"Invoice Edit", slug:"app-invoice-edit"},
+                {url:"app-invoice-add.html", name:"Invoice Add", i18n:"Invoice Add", slug:"app-invoice-add"},
+              ]
+            },
+            {url:"Javascript:void(0)", name:"eCommerce", i18n:"eCommerce", slug:"eCommerce", icon:"chevron_right", activate:"eCommerceDropdown", dropdown:"1",
+              submenu:[
+                {url:"eCommerce-products-page.html",  i18n:"Products Page", name:"Products Page", slug:"eCommerce-products-page"},
+                {url:"eCommerce-pricing.html",  i18n:"Pricing", name:"Pricing", slug:"eCommerce-pricing"},
+              ]
+            }
+            ]
+          },
+
+          {url:"Javascript:void(0)", i18n:"Pages", name:"Pages", activate:"PageDropdown", slug:"pages",icon:"content_paste", dropdown:"1",
+            submenu:[
+              {url:"page-contact.html",  i18n:"Contact", name:"Contact", slug:"page-contact"},
+              {url:"page-blog-list.html",  i18n:"Blog", name:"Blog", slug:"page-blog-list"},
+              {url:"page-search.html",  i18n:"Search", name:"Search", slug:"page-search"},
+              {url:"page-knowledge.html",  i18n:"Knowledge", name:"Knowledge", slug:"page-knowledge"},
+              {url:"page-timeline.html", name:"Timeline", i18n:"Timeline", slug:"page-timeline"},
+              {url:"page-faq.html",  i18n:"FAQs", name:"FAQs", slug:"page-faq"},
+              {url:"page-blank.html",  i18n:"Page Blank", name:"Page Blank", slug:"page-blank"},
+              {url:"user-profile-page.html",  i18n:"User Profile", name:"User Profile", slug:"user-profile-page"},
+              {url:"Javascript:void(0)", name:"User", i18n:"User", slug:"User", icon:"chevron_right", activate:"userDropdown", dropdown:"1",
+                submenu:[
+                  {url:"page-users-list.html", name:"List", i18n:"List", slug:"users-list"},
+                  {url:"page-users-view.html", name:"View", i18n:"View", slug:"users-view"},
+                  {url:"page-users-edit.html", name:"Edit", i18n:"Edit", slug:"users-edit"},
+                ]
+              },
+              {url:"Javascript:void(0)", name:"Medias", i18n:"Medias", slug:"medias", icon:"chevron_right", activate:"mediasDropdown", dropdown:"1",
+                submenu:[
+                  {url:"media-gallery-page.html", name:"Gallery Page", i18n:"Gallery Page", slug:"media-gallery-page"},
+                  {url:"media-hover-effects.html", name:"Media Hover Effects", i18n:"Media Hover Effects", slug:"media-hover-effects"},
+                ]
+              },
+              {url:"Javascript:void(0)", name:"Authentication", i18n:"Authentication", slug:"authentication", icon:"chevron_right", activate:"authDropdown", dropdown:"1",
+                submenu:[
+                  {url:"user-login.html",  i18n:"Login", name:"Login", slug:"user-login", newTab: "_blank"},
+                  {url:"user-register.html",  i18n:"Register", name:"Register", slug:"user-register", newTab: "_blank"},
+                  {url:"user-forgot-password.html",  i18n:"Forgot Password", name:"Forgot Password", slug:"user-forgot-password", newTab: "_blank"},
+                  {url:"user-lock-screen.html",  i18n:"Lock Screen", name:"Lock Screen", slug:"user-lock-screen", newTab: "_blank"},
+                ]
+              },
+              {url:"Javascript:void(0)", name:"Misc", i18n:"Misc", slug:"misc", icon:"chevron_right", activate:"miscDropdown", dropdown:"1",
+                submenu:[
+                  {url:"page-404.html",  i18n:"404", name:"404", slug:"page-404", newTab: "_blank"},
+                  {url:"page-500.html",  i18n:"500", name:"500", slug:"page-505", newTab: "_blank"},
+                  {url:"page-maintenance.html",  i18n:"Page Maintenanace", name:"Page Maintenanace", slug:"page-maintenance", newTab: "_blank"},
+                ]
+              },
+              {url:"page-account-settings.html", name:"Account Settings", i18n:"Account Settings", slug:"page-account-settings"},
+            ]
+          },
+
+          {url:"Javascript:void(0)", i18n:"Cards", name:"Cards",icon:"cast", slug:'cards', activate:"Cards", dropdown: "1",
+            submenu:[
+              {url:"cards-basic.html",  i18n:"Cards", name:"Cards", slug:"cards-basic"},
+              {url:"cards-advance.html",  i18n:"Cards Advance", name:"Cards Advance", slug:"cards-advance"},
+              {url:"cards-extended.html",  i18n:"Cards Extended", name:"Cards Extended", slug:"cards-extended"},
+            ]
+          },
+
+          {url:"Javascript:void(0)", i18n:"CSS", name:"CSS", activate:'CssDropdown', slug:"css",icon:"invert_colors", dropdown:'1',
+            submenu:[
+              {url:"css-typography.html",  i18n:"Typograpy", name:"Typograpy", slug:"css-typography"},
+              {url:"css-color.html",  i18n:"Color", name:"Color", slug:"css-color"},
+              {url:"css-grid.html",  i18n:"Grid", name:"Grid", slug:"css-grid"},
+              {url:"css-helpers.html",  i18n:"Helpers", name:"Helpers", slug:"css-helpers"},
+              {url:"css-media.html",  i18n:"Media", name:"Media", slug:"css-media"},
+              {url:"css-pulse.html",  i18n:"Pulse", name:"Pulse", slug:"css-pulse"},
+              {url:"css-sass.html",  i18n:"Sass", name:"Sass", slug:"css-sass"},
+              {url:"css-shadow.html",  i18n:"Shadow", name:"Shadow", slug:"css-shadow"},
+              {url:"css-animations.html",  i18n:"Animations", name:"Animations", slug:"css-animations"},
+              {url:"css-transitions.html",  i18n:"Transitions", name:"Transitions", slug:"css-transitions"},
+            ]
+          },
+
+           {url:"Javascript:void(0)", i18n:"Basic UI", name:"Basic UI", activate:"BasicUIDropdown",slug:"basic-ui",icon:"photo_filter", dropdown:"1",
+            submenu:[
+              {url:"ui-basic-buttons.html", i18n:"Basic Buttons", name:"Basic Buttons",slug:"ui-basic-buttons"},
+              {url:"ui-extended-buttons.html", i18n:"Extended Buttons", name:"Extended Buttons",slug:"ui-extended-buttons"},
+              {url:"ui-icons.html",  i18n:"Icons", name:"Icons", slug:"ui-icons"},
+              {url:"ui-alerts.html",  i18n:"Alerts", name:"Alerts", slug:"ui-alerts"},
+              {url:"ui-badges.html",  i18n:"Badges", name:"Badges", slug:"ui-badges"},
+              {url:"ui-breadcrumbs.html",  i18n:"Breadcrumbs", name:"Breadcrumbs", slug:"ui-breadcrumbs"},
+              {url:"ui-chips.html",  i18n:"Chips", name:"Chips", slug:"ui-chips"},
+              {url:"ui-collections.html",  i18n:"Collections", name:"Collections", slug:"ui-collections"},
+              {url:"ui-navbar.html",  i18n:"Navbar", name:"Navbar", slug:"ui-navbar"},
+              {url:"ui-pagination.html",  i18n:"Pagination", name:"Pagination", slug:"ui-pagination"},
+              {url:"ui-preloader.html",  i18n:"Preloader", name:"Preloader", slug:"ui-preloader"},
+            ]
+          },
+
+          {url:"Javascript:void(0)", i18n:"Advanced UI", name:"Advanced UI", activate:"AdvancedUIDropdown",slug:"advance-ui",icon:"settings_brightness", dropdown:"1",
+            submenu:[
+              {url:"advance-ui-carousel.html",  i18n:"Carousel", name:"Carousel", slug:"advance-ui-carousel"},
+              {url:"advance-ui-collapsibles.html",  i18n:"Collapsibles", name:"Collapsibles", slug:"advance-ui-collapsibles"},
+              {url:"advance-ui-toasts.html",  i18n:"Toasts", name:"Toasts", slug:"advance-ui-toasts"},
+              {url:"advance-ui-tooltip.html",  i18n:"Tooltip", name:"Tooltip", slug:"advance-ui-tooltip"},
+              {url:"advance-ui-dropdown.html",  i18n:"Dropdown", name:"Dropdown", slug:"advance-ui-dropdown"},
+              {url:"advance-ui-feature-discovery.html",  i18n:"Discovery", name:"Discovery", slug:"advance-ui-feature-discovery"},
+              {url:"advance-ui-media.html",  i18n:"Media", name:"Media", slug:"advance-ui-media"},
+              {url:"advance-ui-modals.html",  i18n:"Modals", name:"Modals", slug:"advance-ui-modals"},
+              {url:"advance-ui-scrollspy.html",  i18n:"Scrollspy", name:"Scrollspy", slug:"advance-ui-scrollspy"},
+              {url:"advance-ui-tabs.html",  i18n:"Tabs", name:"Tabs", slug:"advance-ui-tabs"},
+              {url:"advance-ui-waves.html",  i18n:"Waves", name:"Waves", slug:"advance-ui-waves"},
+            ]
+          },
+
+          {url:"Javascript:void(0)", i18n:"Extra Components", name:"Extra Components", activate:"ExtraComponentsDropdown",slug:"extra-components",icon:"add_to_queue", dropdown:"1",
+            submenu:[
+              {url:"extra-components-range-slider.html",  i18n:"Range Slider", name:"Range Slider", slug:"extra-components-range-slider"},
+              {url:"extra-components-sweetalert.html",  i18n:"Sweetalert", name:"Sweetalert", slug:"extra-components-sweetalert"},
+              {url:"extra-components-nestable.html",  i18n:"Nestable", name:"Nestable", slug:"extra-components-nestable"},
+              {url:"extra-components-treeview.html", name:"Treeview", i18n:"Treeview", slug:"extra-components-treeview"},
+              {url:"extra-components-ratings.html", name:"Ratings", i18n:"Ratings", slug:"extra-components-ratings"},
+              {url:"extra-components-tour.html", name:"Tour", i18n:"Tour", slug:"extra-components-tour"},
+              {url:"extra-components-i18n.html", name:"i18n", i18n:"i18n", slug:"extra-components-i18n"},
+              {url:"extra-components-highlight.html",  i18n:"Highlight", name:"Highlight", slug:"extra-components-highlight"},
+            ]
+          },
+
+          {url:"Javascript:void(0)", i18n:"Forms & Tables", name:"Forms & Tables", activate:"formsTables",icon:"chrome_reader_mode", dropdown:"1",
+            submenu:[
+              {url:"table-basic.html", i18n:"Basic Tables", name:"Basic Tables",slug:"table-basic"},
+              {url:"table-data-table.html", i18n:"Data Tables", name:"Data Tables",slug:"table-data-table"},
+              {url:"Javascript:void(0)", i18n:"Forms", name:"Forms", activate:"formsDropdown",icon:"chevron_right", dropdown:"1",
+                submenu:[
+                  {url:"form-elements.html",  i18n:"Form Elements", name:"Form Elements", slug:"form-elements"},
+                  {url:"form-select2.html", name:"Form Select2", i18n:"Form Select2", slug:"form-select2"},
+                  {url:"form-validation.html",  i18n:"Form Validation", name:"Form Validation", slug:"form-validation"},
+                  {url:"form-masks.html",  i18n:"Form Masks", name:"Form Masks", slug:"form-masks"},
+                  {url:"form-editor.html", name:"Form Editor", i18n:"Form Editor", slug:"form-editor"},
+                  {url:"form-file-uploads.html",  i18n:"File Uploads", name:"File Uploads", slug:"form-file-uploads"},
+                ]
+              },
+              {url:"form-layouts.html",  i18n:"Form Layouts", name:"Form Layouts", slug:"form-layouts"},
+              {url:"form-wizard.html",  i18n:"Form Wizard", name:"Form Wizard", slug:"form-wizard"},
+            ]
+          },
+
+          {url:"Javascript:void(0)", i18n:"Chart", name:"Chart", activate:"ChartDropdown",slug:"chart",icon:"pie_chart_outlined", dropdown:"1",
+            submenu:[
+              {url:"charts-chartjs.html",  i18n:"ChartJS", name:"ChartJS", slug:"charts-chartjs"},
+              {url:"charts-chartist.html",  i18n:"Chartist", name:"Chartist", slug:"charts-chartist"},
+              {url:"charts-sparklines.html",  i18n:"Sparkline Charts", name:"Sparkline Charts", slug:"charts-sparklines"},
+            ]
+          },
+
+        ])
+      // END: Horizontal nav start
+// END: Header
+//- Mian search Content
+ul#default-search-main.display-none
+  li.auto-suggestion-title
+    a.collection-item(href="#")
+      h6.search-title FILES
+  li.auto-suggestion
+    a.collection-item(href="#")
+      .display-flex
+        .display-flex.align-item-center.flex-grow-1
+          .avatar
+            img(src='../../../app-assets/images/icon/pdf-image.png' width='24' height='30' alt="sample image")
+          .member-info.display-flex.flex-column
+            span.black-text Two new item submitted
+            small.grey-text Marketing Manager
+        .status
+          small.grey-text 17kb
+  li.auto-suggestion
+    a.collection-item(href="#")
+      .display-flex
+        .display-flex.align-item-center.flex-grow-1
+          .avatar
+            img(src='../../../app-assets/images/icon/doc-image.png' width='24' height='30' alt="sample image")
+          .member-info.display-flex.flex-column
+            span.black-text 52 Doc file Generator
+            small.grey-text FontEnd Developer
+        .status
+          small.grey-text 550kb
+  li.auto-suggestion
+    a.collection-item(href="#")
+      .display-flex
+        .display-flex.align-item-center.flex-grow-1
+          .avatar
+            img(src='../../../app-assets/images/icon/xls-image.png' width='24' height='30' alt="sample image")
+          .member-info.display-flex.flex-column
+            span.black-text 25 Xls File Uploaded
+            small.grey-text Digital Marketing Manager
+        .status
+          small.grey-text 20kb
+  li.auto-suggestion
+    a.collection-item(href="#")
+      .display-flex
+        .display-flex.align-item-center.flex-grow-1
+          .avatar
+            img(src='../../../app-assets/images/icon/jpg-image.png' width='24' height='30' alt="sample image")
+          .member-info.display-flex.flex-column
+            span.black-text Anna Strong
+            small.grey-text Web Designer
+        .status
+          small.grey-text 37kb
+  li.auto-suggestion-title
+    a.collection-item(href="#")
+      h6.search-title MEMBERS
+  li.auto-suggestion
+    a.collection-item(href="#")
+      .display-flex
+        .display-flex.align-item-center.flex-grow-1
+          .avatar
+            img.circle(src='../../../app-assets/images/avatar/avatar-7.png' width='30' alt="sample image")
+          .member-info.display-flex.flex-column
+            span.black-text John Doe
+            small.grey-text UI designer
+  li.auto-suggestion
+    a.collection-item(href="#")
+      .display-flex
+        .display-flex.align-item-center.flex-grow-1
+          .avatar
+            img.circle(src='../../../app-assets/images/avatar/avatar-8.png' width='30' alt="sample image")
+          .member-info.display-flex.flex-column
+            span.black-text Michal Clark
+            small.grey-text FontEnd Developer
+  li.auto-suggestion
+    a.collection-item(href="#")
+      .display-flex
+        .display-flex.align-item-center.flex-grow-1
+          .avatar
+            img.circle(src='../../../app-assets/images/avatar/avatar-10.png' width='30' alt="sample image")
+          .member-info.display-flex.flex-column
+            span.black-text Milena Gibson
+            small.grey-text Digital Marketing
+  li.auto-suggestion
+    a.collection-item(href="#")
+      .display-flex
+        .display-flex.align-item-center.flex-grow-1
+          .avatar
+            img.circle(src='../../../app-assets/images/avatar/avatar-12.png' width='30' alt="sample image")
+          .member-info.display-flex.flex-column
+            span.black-text Anna Strong
+            small.grey-text Web Designer
+//- main page title
+ul#page-search-title.display-none
+  li.auto-suggestion-title
+    a.collection-item(href="#")
+      h6.search-title PAGES
+      
+//- search-not-found section
+ul#search-not-found.display-none
+  li.auto-suggestion
+    a.collection-item.display-flex.align-items-center(href="#")
+      span.material-icons error_outline
+      span.member-info No results found.

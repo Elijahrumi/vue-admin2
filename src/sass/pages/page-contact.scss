@@ -1,0 +1,185 @@
+/*----------------------------------------
+  Contacts Page
+------------------------------------------*/
+
+@import 'variables.scss';
+
+#contact-us {
+	.app-wrapper {
+		.sidenav {
+			width: 340px;
+			padding: 2rem;
+		}
+
+		.contact-header {
+			margin-top: 3.5rem;
+
+			.contact-us {
+				.social-icons {
+					i {
+						font-size: 1.3rem;
+						margin-top: 1rem;
+						margin-bottom: 1rem;
+					}
+				}
+
+				i {
+					font-size: 1.9rem;
+				}
+
+				.form-header {
+					background-color: #d7e0e8;
+					padding: 1.88rem;
+					border-radius: 0.5rem 0.5rem 0rem 0rem;
+
+					i {
+						font-size: 3.5rem;
+						vertical-align: middle;
+						margin-right: 1rem;
+					}
+				}
+			}
+		}
+
+		.contact-sidenav {
+			.contact-left {
+				margin-top: 2rem;
+			}
+
+			.sidenav-trigger {
+				position: absolute;
+				top: 6.5rem;
+				left: 1rem;
+			}
+
+			.line-height {
+				line-height: 1.6rem !important;
+			}
+
+			hr {
+				border: 0;
+				border-top: 1px solid color("blue-grey", "lighten-4");
+			}
+
+			textarea.materialize-textarea {
+				height: 12rem;
+			}
+
+			.contact-form {
+				box-shadow: -3px 0px 10px 0px color("blue-grey", "lighten-5");
+				background-color: $white;
+				padding: 3rem;
+
+				.btn {
+					float: right;
+				}
+
+				.input-field {
+					overflow: visible !important;
+
+					input,
+					textarea {
+						background-color: color("blue-grey", "lighten-5");
+						margin-top: 0.4rem;
+						border: none;
+						border-radius: 0.3rem;
+						padding-left: 1rem;
+					}
+
+					label {
+						margin-left: 1rem;
+						width: auto;
+
+						.active {
+							color: color("blue-grey", "lighten-5") !important;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+// Contact Us Section In Horizontal
+
+.horizontal-layout {
+	#main {
+		.row {
+			.content-wrapper-before {
+				top: 128px;
+			}
+		}
+	}
+}
+
+// For Dark Layout
+
+.page-header-dark {
+	#contact-us {
+		.contact-us {
+
+			.sidebar-title,
+			.sidebar-title h5 {
+				color: $white;
+			}
+		}
+
+		.contact-sidenav {
+			.sidebar {
+				.sidenav-trigger {
+					i.material-icons {
+						color: $white;
+					}
+				}
+			}
+		}
+	}
+}
+
+// Media Query
+
+@media (min-width: 993px) {
+	#contact-us {
+		.app-sidebar {
+			transform: none !important;
+		}
+	}
+}
+
+@media (max-width: 998px) {
+	#contact-us {
+		.app-wrapper {
+			.contact-header {
+				margin-top: 1.3rem;
+
+				h5 {
+					margin-left: 2rem !important;
+					margin-bottom: 1rem !important;
+				}
+
+				i {
+					margin-top: 0.1rem;
+				}
+			}
+		}
+	}
+}
+
+@media(max-width: 600px) {
+	#contact-us {
+		.sidenav-trigger.hide-on-large-only {
+			i.material-icons {
+				position: relative;
+				top: -0.5rem;
+			}
+		}
+
+		.app-wrapper {
+			.contact-sidenav {
+				.sidenav-trigger {
+					top: 6rem;
+				}
+			}
+		}
+	}
+}

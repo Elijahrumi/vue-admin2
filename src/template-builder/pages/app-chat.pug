@@ -1,0 +1,58 @@
+//- =========================================================================================
+	File Name: app-chat.pug
+	Description: App Chat
+	----------------------------------------------------------------------------------------
+	Item Name: Materialize - Material Design Admin Template
+	Version: 1.0
+	Author: PixInvent
+	Author URL: https://pixinvent.com/
+	=========================================================================================
+
+
+extends template
+
+block pageVars
+	- var pageTitle = "Chat"
+	- var pageSubTitle = ""
+	- var description = "The standard font Material Design uses is Roboto. We have included the font files with our framework.."
+	- var activeParentMenu = "app-chat"
+	- var activeMenu = "app-chat"
+
+append pageConfig
+	- var bodyCustom = 'app-page'
+
+append footerConfig
+	//- // - var footerType = 'footer-fixed'
+
+append header
+	- var contentBreadcrumbs = false
+	- var contentHeader = true
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"}, {url:"#",name:"Apps"}, {name:"Chat"}])
+
+//- Include page content in page block
+append content
+	include ../contents/app-chat.html
+	include ../contents/sidebar/right-sidebar.html
+
+//- Vendor css
+//- Add vendor specific CSS
+append vendorcss
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	script(src=app_assets_path + '/js/scripts/app-chat.js')
+
+//- Page css
+//- Add page specific CSS
+append pagecss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/css/pages/app-chat.css')

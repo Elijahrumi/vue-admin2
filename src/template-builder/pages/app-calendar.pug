@@ -1,0 +1,58 @@
+//- =========================================================================================
+	File Name: app-calendar.pug
+	Description: Calendar
+	----------------------------------------------------------------------------------------
+	Item Name: Materialize - Material Design Admin Template
+	Version: 5.0
+	Author: PixInvent
+	Author URL: https://pixinvent.com/
+	==========================================================================================
+
+
+extends template
+
+block pageVars
+	- var pageTitle = "Calendar"
+	- var pageSubTitle = ""
+	- var description = "The standard font Material Design uses is Roboto. We have included the font files with our framework.."
+	- var activeParentMenu = "app-calendar"
+	- var activeMenu = "app-calendar"
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"}, {url:"#",name:"Apps"}, {name:"Apps Calendar"}])
+
+//- Include page content in page block
+append content
+	include ../contents/app-calendar.html
+	include ../contents/sidebar/right-sidebar.html
+	include ../contents/sidebar/fab-menu.html
+
+//- Vendor css
+//- Add vendor specific CSS
+append vendorcss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/flag-icon/css/flag-icon.min.css')
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/fullcalendar/css/fullcalendar.min.css')
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/fullcalendar/daygrid/daygrid.min.css')
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/fullcalendar/timegrid/timegrid.min.css')
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(src=app_assets_path + '/vendors/fullcalendar/lib/moment.min.js')
+	script(src=app_assets_path + '/vendors/fullcalendar/js/fullcalendar.min.js')
+	script(src=app_assets_path + '/vendors/fullcalendar/daygrid/daygrid.min.js')
+	script(src=app_assets_path + '/vendors/fullcalendar/timegrid/timegrid.min.js')
+	script(src=app_assets_path + '/vendors/fullcalendar/interaction/interaction.min.js')
+    
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	script(src=app_assets_path + '/js/scripts/app-calendar.js')
+
+//- Page css
+//- Add page specific CSS
+append pagecss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/css/pages/app-calendar.css')

@@ -1,0 +1,42 @@
+//- =========================================================================================
+	File Name: page-blank.pug
+	Description: Blank Page
+	----------------------------------------------------------------------------------------
+	Item Name: Materialize - Material Design Admin Template
+	Version: 5.0
+	Author: PixInvent
+	Author URL: https://pixinvent.com/
+	==========================================================================================
+
+
+extends template
+
+block pageVars
+	- var pageTitle = "Blank Page"
+	- var pageSubTitle = ""
+	- var description = ""
+	- var activeParentMenu = "pages"
+	- var activeMenu = "page-blank"
+
+append pageConfig	
+	- var headerType = 'sk-header'
+	- var starterKit    = true
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"}, {url:"#",name:"Pages"}, {name:"Blank Page"}])
+
+//- Include page content in page block
+append content
+	include ../../contents/page-blank.html
+	include ../../contents/sidebar/right-sidebar.html
+	include ../../contents/sidebar/fab-menu.html
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs

@@ -1,0 +1,60 @@
+//- =========================================================================================
+	File Name: app-kanban.pug
+	Description: App kanban
+	----------------------------------------------------------------------------------------
+	Item Name: Materialize - Material Design Admin Template
+	Version: 1.0
+	Author: PixInvent
+	Author URL: https://pixinvent.com/
+	=========================================================================================
+
+
+extends template
+
+block pageVars
+	- var pageTitle = "App Kanban"
+	- var pageSubTitle = ""
+	- var activeParentMenu = "app-kanban"
+	- var activeMenu = "app-kanban"
+
+append pageConfig
+	- var bodyCustom = 'app-page'
+	- var bodyCustomMenu = 'menu-collapse'
+
+append footerConfig
+	//- // - var footerType = 'footer-fixed'
+
+append header
+	- var contentBreadcrumbs = false
+	- var contentHeader = true
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"}, {url:"#",name:"Apps"}, {name:"App Kanban"}])
+
+//- Include page content in page block
+append content
+	include ../contents/app-Kanban.html
+	include ../contents/sidebar/right-sidebar.html
+
+//- Vendor css
+//- Add vendor specific CSS
+append vendorcss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/jkanban/jkanban.min.css')
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/quill/quill.snow.css')
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(src=app_assets_path + '/vendors/jkanban/jkanban.min.js')
+	script(src=app_assets_path + '/vendors/quill/quill.min.js')
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	script(src=app_assets_path + '/js/scripts/app-kanban.js')
+
+//- Page css
+//- Add page specific CSS
+append pagecss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/css/pages/app-kanban.css')

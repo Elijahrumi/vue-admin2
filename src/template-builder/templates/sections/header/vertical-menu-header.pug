@@ -1,0 +1,217 @@
+// BEGIN: Header
+header#header.page-topbar
+  div.navbar(class=navbarPosition, class=(navbarHideOnScroll == true ? 'navbar-hide-on-scroll' : ''), class=(navbarBorder == true ? 'navbar-border' : ''), class=(navbarBrandCenter == true ? 'navbar-brand-center' : ''), class=(boxedLayout == true ? 'container boxed-layout' : ''))  
+    nav.navbar-main.navbar-color.nav-collapsible.sideNav-lock(class=navbarColor)
+      .nav-wrapper
+        .header-search-wrapper.hide-on-med-and-down
+          i.material-icons search
+          input.header-search-input.z-depth-2(type='text', name='Search', placeholder='Explore Materialize', data-search="template-list")
+          ul.search-list.collection.display-none
+        ul.navbar-list.right
+          li.dropdown-language
+            a.waves-effect.waves-block.waves-light.translation-button(href='#', data-target='translation-dropdown')
+              span.flag-icon.flag-icon-gb
+          li.hide-on-med-and-down
+            a.waves-effect.waves-block.waves-light.toggle-fullscreen(href='javascript:void(0);')
+              i.material-icons settings_overscan
+          li.hide-on-large-only.search-input-wrapper
+            a.waves-effect.waves-block.waves-light.search-button(href='javascript:void(0);')
+              i.material-icons
+                | search
+          li
+            a.waves-effect.waves-block.waves-light.notification-button(href='javascript:void(0);', data-target='notifications-dropdown')
+              i.material-icons
+                | notifications_none
+                small.notification-badge 5
+          li
+            a.waves-effect.waves-block.waves-light.profile-button(href='javascript:void(0);', data-target='profile-dropdown')
+              span.avatar-status.avatar-online
+                img(src='../../../app-assets/images/avatar/avatar-7.png', alt='avatar')
+                i
+          li
+            a.waves-effect.waves-block.waves-light.sidenav-trigger(href='#', data-target='slide-out-right')
+              i.material-icons format_indent_increase
+        // translation-button
+        ul#translation-dropdown.dropdown-content
+          li.dropdown-item
+            a.grey-text.text-darken-1(href='#!', data-language="en")
+              i.flag-icon.flag-icon-gb
+              |  English
+          li.dropdown-item
+            a.grey-text.text-darken-1(href='#!', data-language="fr")
+              i.flag-icon.flag-icon-fr
+              |  French
+          li.dropdown-item
+            a.grey-text.text-darken-1(href='#!', data-language="pt")
+              i.flag-icon.flag-icon-pt
+              |  Portuguese
+          li.dropdown-item
+            a.grey-text.text-darken-1(href='#!', data-language="de")
+              i.flag-icon.flag-icon-de
+              |  German
+        // notifications-dropdown
+        ul#notifications-dropdown.dropdown-content
+          li
+            h6
+              | NOTIFICATIONS
+              span.new.badge 5
+          li.divider
+          li
+            a.black-text(href='#!')
+              span.material-icons.icon-bg-circle.cyan.small add_shopping_cart
+              |  A new order has been placed!
+            time.media-meta.grey-text.darken-2(datetime='2015-06-12T20:50:48+08:00') 2 hours ago
+          li
+            a.black-text(href='#!')
+              span.material-icons.icon-bg-circle.red.small stars
+              |  Completed the task
+            time.media-meta.grey-text.darken-2(datetime='2015-06-12T20:50:48+08:00') 3 days ago
+          li
+            a.black-text(href='#!')
+              span.material-icons.icon-bg-circle.teal.small settings
+              |  Settings updated
+            time.media-meta.grey-text.darken-2(datetime='2015-06-12T20:50:48+08:00') 4 days ago
+          li
+            a.black-text(href='#!')
+              span.material-icons.icon-bg-circle.deep-orange.small today
+              |  Director meeting started
+            time.media-meta.grey-text.darken-2(datetime='2015-06-12T20:50:48+08:00') 6 days ago
+          li
+            a.black-text(href='#!')
+              span.material-icons.icon-bg-circle.amber.small trending_up
+              |  Generate monthly report
+            time.media-meta.grey-text.darken-2(datetime='2015-06-12T20:50:48+08:00') 1 week ago
+        // profile-dropdown
+        ul#profile-dropdown.dropdown-content
+          li
+            a.grey-text.text-darken-1(href='user-profile-page.html')
+              i.material-icons person_outline
+              |  Profile
+          li
+            a.grey-text.text-darken-1(href='app-chat.html')
+              i.material-icons chat_bubble_outline
+              |  Chat
+          li
+            a.grey-text.text-darken-1(href='page-faq.html')
+              i.material-icons help_outline
+              |  Help
+          li.divider
+          li
+            a.grey-text.text-darken-1(href='user-lock-screen.html')
+              i.material-icons lock_outline
+              |  Lock
+          li
+            a.grey-text.text-darken-1(href='user-login.html')
+              i.material-icons keyboard_tab
+              |  Logout
+      nav.display-none.search-sm
+        .nav-wrapper
+          form
+            .input-field.search-input-sm
+              input.search-box-sm.mb-0(type='search', required='', id='search', data-search="template-list")
+              label.label-icon(for='search')
+                i.material-icons.search-sm-icon search
+              i.material-icons.search-sm-close close
+              ul.search-list.collection.search-list-sm.display-none
+// END: Header
+
+//- Mian search Content
+ul#default-search-main.display-none
+  li.auto-suggestion-title
+    a.collection-item(href="#")
+      h6.search-title FILES
+  li.auto-suggestion
+    a.collection-item(href="#")
+      .display-flex
+        .display-flex.align-item-center.flex-grow-1
+          .avatar
+            img(src='../../../app-assets/images/icon/pdf-image.png' width='24' height='30' alt="sample image")
+          .member-info.display-flex.flex-column
+            span.black-text Two new item submitted
+            small.grey-text Marketing Manager
+        .status
+          small.grey-text 17kb
+  li.auto-suggestion
+    a.collection-item(href="#")
+      .display-flex
+        .display-flex.align-item-center.flex-grow-1
+          .avatar
+            img(src='../../../app-assets/images/icon/doc-image.png' width='24' height='30' alt="sample image")
+          .member-info.display-flex.flex-column
+            span.black-text 52 Doc file Generator
+            small.grey-text FontEnd Developer
+        .status
+          small.grey-text 550kb
+  li.auto-suggestion
+    a.collection-item(href="#")
+      .display-flex
+        .display-flex.align-item-center.flex-grow-1
+          .avatar
+            img(src='../../../app-assets/images/icon/xls-image.png' width='24' height='30' alt="sample image")
+          .member-info.display-flex.flex-column
+            span.black-text 25 Xls File Uploaded
+            small.grey-text Digital Marketing Manager
+        .status
+          small.grey-text 20kb
+  li.auto-suggestion
+    a.collection-item(href="#")
+      .display-flex
+        .display-flex.align-item-center.flex-grow-1
+          .avatar
+            img(src='../../../app-assets/images/icon/jpg-image.png' width='24' height='30' alt="sample image")
+          .member-info.display-flex.flex-column
+            span.black-text Anna Strong
+            small.grey-text Web Designer
+        .status
+          small.grey-text 37kb
+  li.auto-suggestion-title
+    a.collection-item(href="#")
+      h6.search-title MEMBERS
+  li.auto-suggestion
+    a.collection-item(href="#")
+      .display-flex
+        .display-flex.align-item-center.flex-grow-1
+          .avatar
+            img.circle(src='../../../app-assets/images/avatar/avatar-7.png' width='30' alt="sample image")
+          .member-info.display-flex.flex-column
+            span.black-text John Doe
+            small.grey-text UI designer
+  li.auto-suggestion
+    a.collection-item(href="#")
+      .display-flex
+        .display-flex.align-item-center.flex-grow-1
+          .avatar
+            img.circle(src='../../../app-assets/images/avatar/avatar-8.png' width='30' alt="sample image")
+          .member-info.display-flex.flex-column
+            span.black-text Michal Clark
+            small.grey-text FontEnd Developer
+  li.auto-suggestion
+    a.collection-item(href="#")
+      .display-flex
+        .display-flex.align-item-center.flex-grow-1
+          .avatar
+            img.circle(src='../../../app-assets/images/avatar/avatar-10.png' width='30' alt="sample image")
+          .member-info.display-flex.flex-column
+            span.black-text Milena Gibson
+            small.grey-text Digital Marketing
+  li.auto-suggestion
+    a.collection-item(href="#")
+      .display-flex
+        .display-flex.align-item-center.flex-grow-1
+          .avatar
+            img.circle(src='../../../app-assets/images/avatar/avatar-12.png' width='30' alt="sample image")
+          .member-info.display-flex.flex-column
+            span.black-text Anna Strong
+            small.grey-text Web Designer
+//- main page title
+ul#page-search-title.display-none
+  li.auto-suggestion-title
+    a.collection-item(href="#")
+      h6.search-title PAGES
+      
+//- search-not-found section
+ul#search-not-found.display-none
+  li.auto-suggestion
+    a.collection-item.display-flex.align-items-center(href="#")
+      span.material-icons error_outline
+      span.member-info No results found.

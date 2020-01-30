@@ -1,0 +1,39 @@
+//- =========================================================================================
+	File Name: advance-ui-feature-discovery.pug
+	Description: Feature Discovery
+	----------------------------------------------------------------------------------------
+	Item Name: Materialize - Material Design Admin Template
+	Version: 5.0
+	Author: PixInvent
+	Author URL: https://pixinvent.com/
+	==========================================================================================
+
+
+extends template
+
+block pageVars
+	- var pageTitle = "Feature Discovery"
+	- var pageSubTitle = ""
+	- var description = "The standard font Material Design uses is Roboto. We have included the font files with our framework.."
+	- var activeParentMenu = "advance-ui"
+	- var activeMenu = "advance-ui-feature-discovery"
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"}, {url:"#",name:"Advance UI"}, {name:"Feature Discovery"}])
+
+//- Include page content in page block
+append content
+	include ../contents/advance-ui-feature-discovery.html
+	include ../contents/sidebar/right-sidebar.html
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(src=app_assets_path + '/js/vendors.min.js')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	script(src=app_assets_path + '/js/scripts/advance-ui-feature-discovery.js')

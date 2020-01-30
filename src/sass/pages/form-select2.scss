@@ -1,0 +1,30 @@
+/*----------------------------------------
+    Select2
+------------------------------------------*/
+
+@import 'variables.scss';
+  // select2 result
+.select2-results{
+  .select2-results__options{
+    .select2-results__option{
+      strong.select2-results__group{
+        font-weight: 900;
+        font-size:1.1rem;
+      }
+      .select2-result-repository{
+        display: flex;
+        .select2-result-repository__avatar{
+          margin-right: 1rem;
+          img{
+            width: 100px;
+          }
+        }
+      }
+    }
+  }
+}
+// select 2 search input
+.select2-search__field{
+  padding: 0 1rem !important;
+ box-sizing: border-box !important  ;
+}

@@ -1,0 +1,33 @@
+/*----------------------------------------
+    Maintenance
+------------------------------------------*/
+@import 'variables.scss';
+
+.section-maintenance{
+
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $white;
+    height: 100vh;
+    overflow: hidden;
+	
+#maintenance{
+	h6{
+	    line-height: 1.7rem;
+    }
+    
+    .maintenance-img{
+        width: 35%;
+    }
+}
+
+}
+
+@media screen and (max-width: 540px){
+    .section.section-maintenance{
+        .error-code{
+            font-size: 2rem !important;
+        }
+    }
+}

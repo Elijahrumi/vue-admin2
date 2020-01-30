@@ -1,0 +1,40 @@
+//- =========================================================================================
+	File Name: page-collapse.pug
+	Description: Collapse Page
+	----------------------------------------------------------------------------------------
+	Item Name: Materialize - Material Design Admin Template
+	Version: 5.0
+	Author: PixInvent
+	Author URL: https://pixinvent.com/
+	==========================================================================================
+
+
+extends template
+
+block pageVars
+	- var pageTitle = "Page Collapse"
+	- var pageSubTitle = ""
+	- var description = ""
+	- var activeParentMenu = "pages"
+	- var activeMenu = "page-collapse"
+append pageConfig
+	- var bodyCustomMenu = 'menu-collapse'
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"}, {url:"#",name:"Pages"}, {name:"Page Collapse"}])
+
+//- Include page content in page block
+append content
+	include ../contents/page-collapse.html
+	include ../contents/sidebar/right-sidebar.html
+	include ../contents/sidebar/fab-menu.html
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs

@@ -1,0 +1,56 @@
+//- =========================================================================================
+	File Name: app-invoice-edit.pug
+	Description: App invoice edit
+	----------------------------------------------------------------------------------------
+	Item Name: Materialize - Material Design Admin Template
+	Version: 1.0
+	Author: PixInvent
+	Author URL: https://pixinvent.com/
+	=========================================================================================
+
+
+extends template
+
+block pageVars
+	- var pageTitle = "App Invoice edit"
+	- var pageSubTitle = ""
+	- var activeParentMenu = "app-invoice"
+	- var activeMenu = "app-invoice-edit"
+
+append pageConfig
+	- var bodyCustom = 'app-page'
+
+append footerConfig	
+	//- // - var footerType = 'footer-fixed'
+
+append header
+	- var contentBreadcrumbs = false
+	- var contentHeader = true
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"}, {url:"#",name:"Apps"}, {name:"App Invoice edit"}])
+
+//- Include page content in page block
+append content
+	include ../contents/app-invoice-edit.html
+	include ../contents/sidebar/right-sidebar.html
+
+//- Vendor css
+//- Add vendor specific CSS
+append vendorcss
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(src=app_assets_path + '/vendors/form_repeater/jquery.repeater.min.js')
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	script(src=app_assets_path + '/js/scripts/app-invoice.js')
+
+//- Page css
+//- Add page specific CSS
+append pagecss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/css/pages/app-invoice.css')

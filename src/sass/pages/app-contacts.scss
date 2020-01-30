@@ -1,0 +1,369 @@
+/*----------------------------------------
+  Contacts Page
+------------------------------------------*/
+
+@import 'variables.scss';
+
+// Datatable
+.content-area {
+	margin-top: 49px;
+	width: calc(100% - 280px);
+
+	&.content-left {
+		float: left;
+	}
+
+	&.content-right {
+		float: right;
+	}
+
+	.app-wrapper {
+		.margin-top-contact {
+			margin-top: -0.35rem;
+		}
+
+		// dataTable
+		.dataTables_wrapper {
+			.dataTables_scroll {
+				.dataTables_scrollBody {
+					overflow-x: hidden !important;
+					cursor: pointer;
+				}
+			}
+
+			&.no-footer {
+				.dataTables_scrollBody {
+					border-color: rgba(0, 0, 0, 0.12);
+				}
+			}
+
+			table {
+				&.dataTable {
+					thead {
+						th {
+							min-width: 69px;
+							color: color('grey', 'darken-2');
+
+							&.background-image-none {
+								background-image: none !important;
+							}
+						}
+					}
+
+					th,
+					td {
+						padding: 17px 14px;
+						border-bottom: 1px solid color("blue-grey", lighten-4);
+						font-weight: 300;
+						white-space: nowrap;
+
+						&:last-child {
+							i {
+								max-width: 20px;
+								overflow: hidden;
+							}
+						}
+					}
+
+					tbody {
+						overflow: auto;
+
+						th,
+						td {
+							padding: 8px 14px;
+							border: none !important;
+							white-space: nowrap;
+
+							i {
+								&.material-icons {
+									color: color('grey', 'base');
+									cursor: pointer;
+								}
+							}
+						}
+					}
+
+					tfoot {
+
+						th,
+						td {
+							border-top: 1px solid color("blue-grey", lighten-4);
+							font-weight: 300;
+							white-space: nowrap;
+						}
+					}
+
+					&.stripe,
+					&.display {
+						tbody {
+							tr {
+								height: auto;
+
+								&.odd {
+									background-color: #F4F5F7;
+
+									&>.sorting_1 {
+										background-color: transparent;
+									}
+								}
+							}
+						}
+					}
+
+					&.display,
+					&.order-column.hover {
+						tbody {
+
+							tr.hover,
+							tr:hover {
+								&>.sorting_1 {
+									background-color: transparent;
+								}
+							}
+						}
+					}
+				}
+				[type="checkbox"]+span:not(.lever):before,
+				[type="checkbox"]:not(.filled-in)+span:not(.lever):after {
+					border-radius: 4px !important;
+					opacity: 0.5;
+					width: 15px;
+					height: 15px;
+				}
+				[type="checkbox"]:checked + span:not(.lever):before{
+					width: 10px !important;
+					height: 20px !important;
+				}
+			}
+
+			.dataTables_length,
+			.dataTables_filter {
+				display: none;
+			}
+
+			.dataTables_info {
+				margin-left: 18px;
+				color: color('grey', 'darken-2');
+			}
+
+			.dataTables_paginate {
+				padding-bottom: 0.75rem;
+				margin-right: 3.8rem;
+
+				.paginate_button {
+					padding: 0.25em 0.65em;
+					margin-top: 0.25rem;
+
+					&.current,
+					&.current:hover {
+						background: $primary-color;
+						border: 1px solid $primary-color;
+						color: $white !important;
+						border-radius: 6px;
+						box-shadow: 0px 0px 8px 0px $primary-color;
+					}
+
+					&:hover {
+						background: $primary-color;
+						border: 1px solid $primary-color;
+						color: $white !important;
+						border-radius: 6px;
+						box-shadow: 0px 0px 8px 0px $primary-color;
+					}
+
+				}
+			}
+		}
+
+		.datatable-search {
+			position: relative;
+
+			.search-icon {
+				position: absolute;
+				top: 15px;
+				left: 15px;
+				color: color('grey', 'lighten-1');
+			}
+
+			.app-filter {
+				background-color: $white;
+				border: none;
+				max-width: calc(100% - 3rem);
+				border-radius: 0.4rem;
+				padding: 0.2rem;
+				padding-left: 2.75rem;
+				margin-bottom: 0.5rem;
+				box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+
+				&:focus {
+					box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2) !important;
+					border-bottom: none !important;
+				}
+			}
+		}
+
+		.avatar-contact {
+			img {
+				width: 38px;
+				background-color: color("grey", 'lighten-4');
+				box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12);
+				border-radius: 50%;
+			}
+		}
+	}
+}
+// contact compose sidebar
+.contact-compose-sidebar{
+  /* contact sidebar */
+    box-shadow: -8px 0 18px 0 rgba(25,42,70,0.13);
+    width: 24.8rem;
+    background-color: white;
+    position: fixed;
+    transform: translateX(110%);
+    transition: all .3s ease;
+    z-index: 1003;
+    right: 2rem;
+    left: auto;
+    bottom: 0;
+    top: -1px;
+    opacity: 0;
+    // contact-compose-sidebar - display
+    &.show{
+      opacity: 1;
+      transform: translateX(9%) translateY(1px);
+    }
+		// Close Icon
+		.card{
+			box-shadow: none;
+			.card-header{
+				justify-content: space-between;
+				align-items: center;
+				.close-icon{
+					cursor: pointer;
+					i{
+						font-size: 1.2rem;
+					}
+					&:focus{
+						outline: none;
+					}
+				}
+			}
+		}
+    // Edit contact sidebar Items
+    .edit-contact-item{
+      // Custom-file label background
+      .file-field{
+        display: flex;
+        align-items: center;
+        .btn-file{
+          height: 2rem;
+          line-height: 2rem;
+        }
+      }
+      // select options
+      select{
+        option{
+          font-weight: 700;
+          height: 32px;
+          width: 50px
+        }
+			}
+			.dropdown-content{
+				width: 185.906px !important;
+			}
+		}
+		// upadate and add button
+		.add-contact,
+		.update-contact{
+			background-color: $primary-color;
+		}
+}
+// contact sidebara overlay
+
+.contact-overlay{
+	/* contact overlay */
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		position: absolute;
+		z-index: 999;
+		visibility: hidden;
+		opacity: 0;
+		&.show{
+			visibility: visible;
+			transition: all .3s ease;
+			opacity: 1;
+			background-color: rgba(#000, 0.2);
+		}
+}
+// Media Query
+
+@media only screen and (max-width: 992px) {
+	table.responsive-table thead tr {
+		// display: flex;
+		padding: 0 10px 0 0;
+	}
+}
+
+@media (max-width: 600px) {
+	.content-area {
+		.app-wrapper {
+			.sidenav-trigger {
+				display: block !important;
+				margin-bottom: 5px !important;
+				margin-top: 15px !important;
+				background-color: $primary-color !important;
+				color: #fff;
+				padding: 10px;
+				width: 45px;
+			}
+
+			.dataTables_wrapper {
+				table.dataTable {
+					height: calc(100vh - 530px);
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 900px) {
+	.content-area {
+		margin-top: -110px !important;
+
+		&.content-right,
+		&.content-left {
+			width: 100%;
+			float: none !important;
+			z-index: 1;
+		}
+	}
+
+	.sidebar {
+		.sidebar-content {
+			.sidenav-trigger {
+				top: 88px;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	.content-area {
+		.app-wrapper {
+			.dataTables_wrapper {
+				.dataTables_info {
+					display: none;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) {
+	.dataTables_wrapper.no-footer div.dataTables_scrollBody>table {
+		border-bottom: none;
+		height: 850px;
+	}
+}

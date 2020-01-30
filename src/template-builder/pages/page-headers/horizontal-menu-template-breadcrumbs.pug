@@ -1,0 +1,15 @@
+if(contentHeader)
+  .content-wrapper-before(class= headerBGColor)
+
+if(contentBreadcrumbs)
+  div#breadcrumbs-wrapper.pt-1.pb-0
+    // Search for small screen
+    //- .header-search-wrapper.grey.lighten-2.hide-on-large-only
+    //-   input.header-search-input.z-depth-2(type='text', name='Search', placeholder='Explore Materialize')
+    .container
+      .row
+        .col.s12.m6.l6
+          h5.breadcrumbs-title
+            span #{pageTitle}
+        .col.s12.m6.l6.right-align-md
+          block breadcrumbs

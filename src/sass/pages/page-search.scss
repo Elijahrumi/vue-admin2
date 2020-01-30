@@ -1,0 +1,72 @@
+/*----------------------------------------
+    Page Search
+------------------------------------------*/
+
+@import 'variables.scss';
+
+#search-page {
+    #search-wrapper {
+        background-image: url("../../images/gallery/search.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        overflow: hidden;   
+
+        .input-field {
+            margin-bottom: 1rem;
+
+            h5 {
+                margin-bottom: 1.5rem;
+            }
+        }
+    }
+
+    .search-circle {
+        border-radius: 10rem;
+        padding-left: 15px;
+    }
+
+    .tabs-style {
+        background-color: transparent;
+        color: $black;
+        // margin-top: -63px;
+
+        a.active {
+            color: $black;
+        }
+    }
+
+    .tab-style a {
+        color: $black;
+    }
+
+    .tabs-style .tab a:focus,
+    .tabs-style .tab a:focus.active {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .right-content {
+        padding: 1.5rem 2rem 1.5rem 2rem;
+        border: 1px solid color("blue-grey", "lighten-4");
+    }
+
+    .search-box {
+        width: 95%;
+        box-shadow: 3px 3px 14px color("blue-grey", "darken-2");
+    }
+
+    .tabs .indicator {
+        height: 4px;
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+}
+
+
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) {
+    #search-page {
+        .video {
+            .card-content {
+                padding: 10px;
+            }
+        }
+    }
+}

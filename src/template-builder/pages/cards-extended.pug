@@ -1,0 +1,48 @@
+//- =========================================================================================
+	File Name: cards-extended.pug
+	Description: Cards Extended
+	----------------------------------------------------------------------------------------
+	Item Name: Materialize - Material Design Admin Template
+	Version: 5.0
+	Author: PixInvent
+	Author URL: https://pixinvent.com/
+	==========================================================================================
+
+
+extends template
+
+block pageVars
+	- var pageTitle = "Cards Extended"
+	- var pageSubTitle = ""
+	- var description = "The standard font Material Design uses is Roboto. We have included the font files with our framework.."
+	- var activeParentMenu = "cards"
+	- var activeMenu = "cards-extended"
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"}, {url:"#",name:"Cards"}, {name:"Cards Extended"}])
+
+//- Include page content in page block
+append content
+	include ../contents/cards-extended.html
+	include ../contents/sidebar/right-sidebar.html
+	include ../contents/sidebar/fab-menu.html
+
+//- Vendor css
+//- Add vendor specific CSS
+append vendorcss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/fonts/fontawesome/css/all.min.css')
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(src=app_assets_path + '/vendors/chartist-js/chartist.min.js')
+	script(src=app_assets_path + '/vendors/chartjs/chart.min.js')
+	script(src=app_assets_path + '/fonts/fontawesome/js/all.min.js')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	script(src=app_assets_path + '/js/scripts/cards-extended.js')
+	script(src=app_assets_path + '/js/custom/custom-script.js')

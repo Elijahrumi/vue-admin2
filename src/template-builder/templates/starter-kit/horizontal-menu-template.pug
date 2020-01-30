@@ -1,0 +1,94 @@
+//- ===============================================================================================
+	File Name: horizontal-menu-template.pug
+	Description: Default Material
+	----------------------------------------------------------------------------------------------
+	Item Name: Materialize - Material Design Admin Template
+	Version: 5.0
+	Author: PixInvent
+	Author URL: https://pixinvent.com/
+	================================================================================================ -//
+
+extends ../../base
+
+//- Template customization
+//------------------------
+block templateConfig
+	- var templateCustom = "horizontal-layout page-header-light horizontal-menu"
+	- var dataMenu = "horizontal-menu"
+	- var dataColor = ""
+
+//- Page level customization
+//------------------------
+block pageConfig
+	- var logoType = 'light'
+
+block navbarConfig
+	- var navbarPosition = "navbar-fixed"
+	- var navbarColor = "navbar-dark gradient-45deg-light-blue-cyan"
+	- var navbarShadow = false
+
+block horizontalMenuConfig
+	- var horizontalMenuType = "navbar-fixed hide-on-med-and-down"
+	- var horizontalMenuColor = "navbar-dark"
+	- var menuWithoutDDArrow = true
+	- var menuShadow = true
+
+block verticalMenuConfig
+	- var menuType = "sidenav-fixed hide-on-large-only"
+	- var menuColor = "sidenav-light"
+	- var menuOpenType = "menu-accordion"
+	- var menuShadow = true
+	- var menuCollapsed = false
+
+block footerConfig
+	- var footerType = "footer-static"
+	- var footerColor = "footer-dark gradient-45deg-light-blue-cyan gradient-shadow"
+	- var footerShadow = true
+	- var footerBorder = true
+
+//- Template includes
+//-------------------
+
+block header
+	- var headerBGColor = "blue-grey lighten-5"
+	- var contentHeader = false
+	- var contentBreadcrumbs = true
+	
+	include ../sections/header/sk-horizontal-menu-header
+
+block main-menu
+	include ../sections/menu/sk-horizontal-menu
+
+block page-header
+	if blankPage != true
+		include ../../pages/page-headers/horizontal-menu-template-breadcrumbs
+
+block footer
+	include ../sections/footer/collapsible-menu-footer
+
+//- Template specific dependency
+//------------------------------
+
+//- Vendor CSS
+//------------------------------
+//- Add Vendor specific CSS
+block vendorcss
+
+//- Page CSS
+//------------------------------
+
+//- Add custom page specific CSS
+block pagecss	
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/css'+rtl+'/themes/'+myThemeName+'/materialize.css')
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/css'+rtl+'/themes/'+myThemeName+'/style.css')
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/css'+rtl+'/layouts/style-horizontal.css')
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+block vendorjs
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+block pagejs

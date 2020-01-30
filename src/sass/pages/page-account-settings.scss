@@ -1,0 +1,92 @@
+@import 'variables.scss';
+
+/*  Account setting */
+/*-----------------*/
+.tabs-vertical {
+  .media-body {
+    /*media body in general tab*/
+    flex-grow: 1;
+    padding: 0 25px;
+  }
+
+  /* tabs*/
+  .tabs {
+    height: auto;
+    flex-direction: column;
+    display: flex;
+    background-color: transparent;
+    justify-content: flex-start;
+    border-radius: 4px;
+
+    .tab {
+      /* tab inside tabs*/
+      width: 100%;
+      text-align: start;
+
+      a {
+        transition: none !important;
+        color: $body-font-color;
+
+        &:hover {
+          color: $body-font-color !important;
+        }
+
+        &.active {
+          background-color: color("pink", "lighten-5") !important;
+          color: color("pink", "base") !important;
+          border-radius: 4px;
+
+          &:hover {
+            color: color("pink", "accent-2") !important;
+          }
+        }
+
+        i {
+          /* icons */
+          position: relative;
+          top: 7px;
+          margin-right: .2rem;
+        }
+      }
+
+      &:hover {
+        background-color: color("grey", "lighten-3");
+      }
+    }
+  }
+
+  /* hide default indicator*/
+  .indicator {
+    display: none;
+  }
+
+  /*input file hide */
+  .upfilewrapper {
+    height: 0;
+    width: 0;
+    overflow: hidden;
+  }
+}
+
+@media (max-width:600px) {
+
+  /* all submit and cancel button alignmet change*/
+  .media-body {
+    .general-action-btn {
+      display: flex;
+      flex-direction: column;
+
+      .btn {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
+  .form-action {
+    flex-direction: column;
+
+    .btn {
+      margin-bottom: 1rem;
+    }
+  }
+}

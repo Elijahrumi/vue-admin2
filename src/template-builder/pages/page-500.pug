@@ -1,0 +1,49 @@
+//- =========================================================================================
+	File Name: page-500.pug
+	Description: 500 Page
+	----------------------------------------------------------------------------------------
+	Item Name: Materialize - Material Design Admin Template
+	Version: 5.0
+	Author: PixInvent
+	Author URL: https://pixinvent.com/
+	==========================================================================================
+
+
+
+extends template
+
+block pageVars
+	- var pageTitle = "500 Page"
+	- var pageSubTitle = ""
+	- var description = "The standard font Material Design uses is Roboto. We have included the font files with our framework.."
+	- var activeParentMenu = "pages"
+	- var activeMenu = "page-500"
+
+append pageConfig
+	- var contentLayout = '1-column'
+	- var blankPage = true //- OPTIONS: true, false
+	- var navbarFixed = false //- OPTIONS:- true, false
+
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"}, {url:"#",name:"Pages"}, {name:"500 Page"}])
+
+//- Include page content in page block
+append content
+	include ../contents/page-500.html
+
+//- Page CSS
+//------------------------------
+//- Add custom page specific CSS
+append pagecss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/css'+rtl+'/pages/page-500.css')
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs

@@ -1,0 +1,55 @@
+//- ==========================================================================================
+	File Name: eCommerce-products-page.pug
+	Description: eCommerce Products Page
+	----------------------------------------------------------------------------------------
+	Item Name: Materialize - Material Design Admin Template
+	Version: 5.0
+	Author: PixInvent
+	Author URL: https://pixinvent.com/
+	==========================================================================================
+
+
+extends template
+
+block pageVars
+	- var pageTitle = "eCommerce Products Page"
+	- var pageSubTitle = ""
+	- var description = "The standard font Material Design uses is Roboto. We have included the font files with our framework.."
+	- var activeParentMenu = "eCommerce"
+	- var activeMenu = "eCommerce-products-page"
+
+block breadcrumbs
+	+breadcrumbs([{url:"index.html",name:"Home"}, {url:"#",name:"Apps"}, {name:"eCommerce Products Page"}])
+
+//- Include page content in page block
+append content
+	include ../contents/eCommerce-products-page.html
+	include ../contents/sidebar/right-sidebar.html
+	include ../contents/sidebar/fab-menu.html
+
+
+//- Vendor CSS
+//------------------------------
+//- Add Vendor specific CSS
+append vendorcss
+	//- svg animated weather icons
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/vendors/noUiSlider/nouislider.min.css')
+
+
+//- Page css
+//- Add page specific CSS
+append pagecss
+	link(rel='stylesheet', type='text/css', href=app_assets_path + '/css'+rtl+'/pages/eCommerce-products-page.css')
+
+//- Vendor JS
+//------------------------------
+//- Add vendor specific JS
+append vendorjs
+	script(src=app_assets_path + '/vendors/noUiSlider/nouislider.min.js')
+
+//- Page JS
+//------------------------------
+//- Add custom page specific JS
+append pagejs
+	script(src=app_assets_path + '/js/scripts/advance-ui-modals.js')
+	script(src=app_assets_path + '/js/scripts/eCommerce-products-page.js')
