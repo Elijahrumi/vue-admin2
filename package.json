@@ -15,7 +15,7 @@
     "gulp-html-beautify": "^1.0.1",
     "gulp-w3c-html-validator": "^1.4.4",
     "merge-stream": "^2.0.0",
-    "node-notifier": "^5.4.3",
+    "node-notifier": "^8.0.1",
     "through2": "^3.0.1"
   },
   "devDependencies": {
